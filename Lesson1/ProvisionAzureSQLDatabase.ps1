@@ -15,6 +15,8 @@ param
 [parameter(Mandatory=$false)]
 [String] $Edition="Basic",
 [parameter(Mandatory=$false)]
+[String] $ServiceObjective,
+[parameter(Mandatory=$false)]
 [String] $AzureProfileFilePath
 )
 
@@ -50,6 +52,40 @@ else
 #Set the Azure Context
 Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
 
+#Set serviceobjective
+if([string]::IsNullOrEmpty($ServiceObjective))
+{
+    If($Edition -eq "Basic")
+        {
+            $ServiceObjective = "Basic"
+
+        }
+        elseif ($Edition -eq "Standard")
+        {
+            $ServiceObjective = "S0"
+            
+        }
+        elseif ($Edition -eq "Premium")
+        {
+            $ServiceObjective = "P1"
+            
+        }
+        elseif ($Edition -eq "GeneralPurpose")
+        {
+            $ServiceObjective = "GP_Gen4_2"
+            
+        }
+        elseif ($Edition -eq "BusinessCritical")
+        {
+            $ServiceObjective = "BC_Gen4_1"
+            
+        }
+         elseif ($Edition -eq "Hyperscale")
+        {
+            $ServiceObjective = "HS_Gen4_1"
+            
+        }
+}
 
 # Check if resource group exists
 # An error is returned and stored in notexists variable if resource group exists
@@ -113,6 +149,7 @@ $_SqlDatabase = @{
  ServerName = $SQLServer;
  DatabaseName = $SQLDatabase;
  Edition = $Edition;
+ RequestedServiceObjectiveName = $ServiceObjective;
  };
 New-AzureRmSqlDatabase @_SqlDatabase;
 }

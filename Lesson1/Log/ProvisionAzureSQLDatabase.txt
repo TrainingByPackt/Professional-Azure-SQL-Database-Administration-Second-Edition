@@ -1,248 +1,477 @@
 ﻿**********************
 Windows PowerShell transcript start
-Start time: 20171228231651
-Username: WIN2012R2\Administrator
-RunAs User: WIN2012R2\Administrator
-Machine: WIN2012R2 (Microsoft Windows NT 6.3.9600.0)
-Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Code\Lesson07\Start-Workload.ps1
-Process ID: 1068
-PSVersion: 5.0.10586.117
-PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0.10586.117
-BuildVersion: 10.0.10586.117
+Start time: 20190426092342
+Username: NEPTUNE\Administrator
+RunAs User: NEPTUNE\Administrator
+Machine: NEPTUNE (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe E:\NewAzureSQLDB\Lesson1\ProvisionSQLMI.ps1
+Process ID: 10196
+PSVersion: 5.1.14409.1005
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14409.1005
+BuildVersion: 10.0.14409.1005
 CLRVersion: 4.0.30319.42000
 WSManStackVersion: 3.0
 PSRemotingProtocolVersion: 2.3
 SerializationVersion: 1.1.0.1
 **********************
-Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
-PS>TerminatingError(Get-AzureRmResourceGroup): "Run Login-AzureRmAccount to login."
-Get-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
-At C:\Code\lesson01\ProvisionAzureSQLDatabase.ps1:23 char:1
+Select-AzureRmProfile : The term 'Select-AzureRmProfile' is not recognized as the name of a cmdlet, function, script 
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:38 char:16
++     $profile = Select-AzureRmProfile -Path $AzureProfileFilePath
++                ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Select-AzureRmProfile:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Select-AzureRmProfile : The term 'Select-AzureRmProfile' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of
+the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:38 char:16
++     $profile = Select-AzureRmProfile -Path $AzureProfileFilePath
++                ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Select-AzureRmProfile:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Set-AzureRmContext : The term 'Set-AzureRmContext' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:53 char:1
++ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Set-AzureRmContext:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Set-AzureRmContext : The term 'Set-AzureRmContext' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:53 char:1
++ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Set-AzureRmContext:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-AzureRmResourceGroup : The term 'Get-AzureRmResourceGroup' is not recognized as the name of a cmdlet, function, 
+script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is 
+correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:92 char:1
 + Get-AzureRmResourceGroup -Name $ResourceGroup -Location $Location -Er ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmResourceGroup], PSInvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.GetAzureResourceGroupCommand
-Get-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
-At C:\Code\lesson01\ProvisionAzureSQLDatabase.ps1:23 char:1
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmResourceGroup:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Get-AzureRmResourceGroup : The term 'Get-AzureRmResourceGroup' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling
+of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:92 char:1
 + Get-AzureRmResourceGroup -Name $ResourceGroup -Location $Location -Er ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmResourceGroup], PSInvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.GetAzureResourceGroupCommand
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmResourceGroup:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
 
-Provisioning Azure Resource Group toystore
-PS>TerminatingError(New-AzureRmResourceGroup): "Run Login-AzureRmAccount to login."
-New-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
-At C:\Code\lesson01\ProvisionAzureSQLDatabase.ps1:34 char:1
-+ New-AzureRmResourceGroup @_ResourceGroup;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmResourceGroup], PSInvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.NewAzureResourceGroupCommand
-New-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
-At C:\Code\lesson01\ProvisionAzureSQLDatabase.ps1:34 char:1
-+ New-AzureRmResourceGroup @_ResourceGroup;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmResourceGroup], PSInvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.NewAzureResourceGroupCommand
-
-PS>TerminatingError(Get-AzureRmSqlServer): "Run Login-AzureRmAccount to login."
-Get-AzureRmSqlServer : Run Login-AzureRmAccount to login.
-At C:\Code\lesson01\ProvisionAzureSQLDatabase.ps1:43 char:1
+The Resource 'Microsoft.Network/virtualNetworks/PackvNet-1549045772' under resource group 'Packt' was not found.
+StatusCode: 404
+ReasonPhrase: Not Found
+OperationID : '53629838-ffc3-4fca-b8f0-c975118003c0'
+Get-AzureRmSqlServer : The term 'Get-AzureRmSqlServer' is not recognized as the name of a cmdlet, function, script 
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:113 char:1
 + Get-AzureRmSqlServer -ServerName $SQLServer -ResourceGroupName $Resou ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmSqlServer], PSInvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
-Get-AzureRmSqlServer : Run Login-AzureRmAccount to login.
-At C:\Code\lesson01\ProvisionAzureSQLDatabase.ps1:43 char:1
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmSqlServer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Get-AzureRmSqlServer : The term 'Get-AzureRmSqlServer' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:113 char:1
 + Get-AzureRmSqlServer -ServerName $SQLServer -ResourceGroupName $Resou ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmSqlServer], PSInvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmSqlServer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
 
-Provisioning Azure SQL Server toyfactory
-PS>TerminatingError(New-AzureRmSqlServer): "Run Login-AzureRmAccount to login."
-New-AzureRmSqlServer : Run Login-AzureRmAccount to login.
-At C:\Code\lesson01\ProvisionAzureSQLDatabase.ps1:59 char:1
-+ New-AzureRmSqlServer @_SqlServer;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmSqlServer], PSInvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
-New-AzureRmSqlServer : Run Login-AzureRmAccount to login.
-At C:\Code\lesson01\ProvisionAzureSQLDatabase.ps1:59 char:1
-+ New-AzureRmSqlServer @_SqlServer;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmSqlServer], PSInvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
-
->> TerminatingError(Get-AzureRmSqlDatabase): "Run Login-AzureRmAccount to login."
-Get-AzureRmSqlDatabase : Run Login-AzureRmAccount to login.
-At C:\Code\lesson01\ProvisionAzureSQLDatabase.ps1:68 char:1
+The Resource 'Microsoft.Network/virtualNetworks/PackvNet-1549045772' under resource group 'Packt' was not found.
+StatusCode: 404
+ReasonPhrase: Not Found
+OperationID : '53629838-ffc3-4fca-b8f0-c975118003c0'
+Get-AzureRmSqlDatabase : The term 'Get-AzureRmSqlDatabase' is not recognized as the name of a cmdlet, function, script 
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:140 char:1
 + Get-AzureRmSqlDatabase -DatabaseName $SQLDatabase -ServerName $SQLSer ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmSqlDatabase], PSInvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Database.Cmdlet.GetAzureSqlDatabase
-Get-AzureRmSqlDatabase : Run Login-AzureRmAccount to login.
-At C:\Code\lesson01\ProvisionAzureSQLDatabase.ps1:68 char:1
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmSqlDatabase:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Get-AzureRmSqlDatabase : The term 'Get-AzureRmSqlDatabase' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of
+the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:140 char:1
 + Get-AzureRmSqlDatabase -DatabaseName $SQLDatabase -ServerName $SQLSer ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmSqlDatabase], PSInvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Database.Cmdlet.GetAzureSqlDatabase
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmSqlDatabase:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
 
-Provisioning Azure SQL Database myfirstazuresqldb
-PS>TerminatingError(New-AzureRmSqlDatabase): "Run Login-AzureRmAccount to login."
-New-AzureRmSqlDatabase : Run Login-AzureRmAccount to login.
-At C:\Code\lesson01\ProvisionAzureSQLDatabase.ps1:81 char:1
+Provisioning Azure SQL Database test3432342
+New-AzureRmSqlDatabase : The term 'New-AzureRmSqlDatabase' is not recognized as the name of a cmdlet, function, script 
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:154 char:1
 + New-AzureRmSqlDatabase @_SqlDatabase;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmSqlDatabase], PSInvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Database.Cmdlet.NewAzureSqlDatabase
-New-AzureRmSqlDatabase : Run Login-AzureRmAccount to login.
-At C:\Code\lesson01\ProvisionAzureSQLDatabase.ps1:81 char:1
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-AzureRmSqlDatabase:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+New-AzureRmSqlDatabase : The term 'New-AzureRmSqlDatabase' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of
+the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:154 char:1
 + New-AzureRmSqlDatabase @_SqlDatabase;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmSqlDatabase], PSInvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Database.Cmdlet.NewAzureSqlDatabase
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-AzureRmSqlDatabase:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
 
-**********************
-Windows PowerShell transcript end
-End time: 20171228231737
-**********************
-**********************
-Windows PowerShell transcript start
-Start time: 20171228231930
-Username: WIN2012R2\Administrator
-RunAs User: WIN2012R2\Administrator
-Machine: WIN2012R2 (Microsoft Windows NT 6.3.9600.0)
-Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1
-Process ID: 2956
-PSVersion: 5.0.10586.117
-PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0.10586.117
-BuildVersion: 10.0.10586.117
-CLRVersion: 4.0.30319.42000
-WSManStackVersion: 3.0
-PSRemotingProtocolVersion: 2.3
-SerializationVersion: 1.1.0.1
-**********************
+Creating firewall rule for  with StartIP: 49.203.218.34 and EndIP: 49.203.218.34
+New-AzureRmSqlServerFirewallRule : The term 'New-AzureRmSqlServerFirewallRule' is not recognized as the name of a 
+cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify 
+that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:180 char:1
++ New-AzureRmSqlServerFirewallRule @NewFirewallRule;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-AzureRmSqlServerFirewallRule:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+New-AzureRmSqlServerFirewallRule : The term 'New-AzureRmSqlServerFirewallRule' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:180 char:1
++ New-AzureRmSqlServerFirewallRule @NewFirewallRule;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-AzureRmSqlServerFirewallRule:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS E:\NewAzureSQLDB\Lesson1> Import-Module Az
+PS E:\NewAzureSQLDB\Lesson1> clear
+Select-AzureRmProfile : The term 'Select-AzureRmProfile' is not recognized as the name of a cmdlet, function, script 
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:38 char:16
++     $profile = Select-AzureRmProfile -Path $AzureProfileFilePath
++                ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Select-AzureRmProfile:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Select-AzureRmProfile : The term 'Select-AzureRmProfile' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of
+the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:38 char:16
++     $profile = Select-AzureRmProfile -Path $AzureProfileFilePath
++                ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Select-AzureRmProfile:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Set-AzureRmContext : The term 'Set-AzureRmContext' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:53 char:1
++ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Set-AzureRmContext:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Set-AzureRmContext : The term 'Set-AzureRmContext' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:53 char:1
++ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Set-AzureRmContext:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-AzureRmResourceGroup : The term 'Get-AzureRmResourceGroup' is not recognized as the name of a cmdlet, function, 
+script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is 
+correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:92 char:1
++ Get-AzureRmResourceGroup -Name $ResourceGroup -Location $Location -Er ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmResourceGroup:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Get-AzureRmResourceGroup : The term 'Get-AzureRmResourceGroup' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling
+of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:92 char:1
++ Get-AzureRmResourceGroup -Name $ResourceGroup -Location $Location -Er ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmResourceGroup:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+The Resource 'Microsoft.Network/virtualNetworks/PackvNet-1549045772' under resource group 'Packt' was not found.
+StatusCode: 404
+ReasonPhrase: Not Found
+OperationID : '53629838-ffc3-4fca-b8f0-c975118003c0'
+Get-AzureRmSqlServer : The term 'Get-AzureRmSqlServer' is not recognized as the name of a cmdlet, function, script 
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:113 char:1
++ Get-AzureRmSqlServer -ServerName $SQLServer -ResourceGroupName $Resou ...
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmSqlServer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Get-AzureRmSqlServer : The term 'Get-AzureRmSqlServer' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:113 char:1
++ Get-AzureRmSqlServer -ServerName $SQLServer -ResourceGroupName $Resou ...
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmSqlServer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+The Resource 'Microsoft.Network/virtualNetworks/PackvNet-1549045772' under resource group 'Packt' was not found.
+StatusCode: 404
+ReasonPhrase: Not Found
+OperationID : '53629838-ffc3-4fca-b8f0-c975118003c0'
+Get-AzureRmSqlDatabase : The term 'Get-AzureRmSqlDatabase' is not recognized as the name of a cmdlet, function, script 
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:140 char:1
++ Get-AzureRmSqlDatabase -DatabaseName $SQLDatabase -ServerName $SQLSer ...
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmSqlDatabase:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Get-AzureRmSqlDatabase : The term 'Get-AzureRmSqlDatabase' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of
+the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:140 char:1
++ Get-AzureRmSqlDatabase -DatabaseName $SQLDatabase -ServerName $SQLSer ...
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmSqlDatabase:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Provisioning Azure SQL Database test242323
+New-AzureRmSqlDatabase : The term 'New-AzureRmSqlDatabase' is not recognized as the name of a cmdlet, function, script 
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:154 char:1
++ New-AzureRmSqlDatabase @_SqlDatabase;
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-AzureRmSqlDatabase:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+New-AzureRmSqlDatabase : The term 'New-AzureRmSqlDatabase' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of
+the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:154 char:1
++ New-AzureRmSqlDatabase @_SqlDatabase;
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-AzureRmSqlDatabase:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Creating firewall rule for  with StartIP: 49.203.218.34 and EndIP: 49.203.218.34
+New-AzureRmSqlServerFirewallRule : The term 'New-AzureRmSqlServerFirewallRule' is not recognized as the name of a 
+cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify 
+that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:180 char:1
++ New-AzureRmSqlServerFirewallRule @NewFirewallRule;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-AzureRmSqlServerFirewallRule:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+New-AzureRmSqlServerFirewallRule : The term 'New-AzureRmSqlServerFirewallRule' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:180 char:1
++ New-AzureRmSqlServerFirewallRule @NewFirewallRule;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-AzureRmSqlServerFirewallRule:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS E:\NewAzureSQLDB\Lesson1> CommandInvocation(Set-PSBreakpoint): "Set-PSBreakpoint"
+>> ParameterBinding(Set-PSBreakpoint): name="Script"; value="C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1"
+>> ParameterBinding(Set-PSBreakpoint): name="Line"; value="24"
+
+  ID Script                                  Line Command                                 Variable                                Action
+  -- ------                                  ---- -------                                 --------                                ------
+   1 ProvisionAzureSQLDatabase.ps1             24
+
+
+PS E:\NewAzureSQLDB\Lesson1> $AzureProfileFilePath
+PS E:\NewAzureSQLDB\Lesson1> TerminatingError(): "System error."
+PS E:\NewAzureSQLDB\Lesson1> rm C:\Code-AZDB\MyAzureProfile.json
+PS E:\NewAzureSQLDB\Lesson1> CommandInvocation(Remove-PSBreakpoint): "Remove-PSBreakpoint"
+>> ParameterBinding(Remove-PSBreakpoint): name="Id"; value="1"
+PS E:\NewAzureSQLDB\Lesson1> TerminatingError(ProvisionAzureSQLDatabase.ps1): "Cannot process command because of one or more missing mandatory parameters: ResourceGroup SQLServer SQLDatabase."
+PS E:\NewAzureSQLDB\Lesson1> cd\
+PS E:\> cd C:\Code-AZDB\Lesson01
+PS C:\Code-AZDB\Lesson01> .\ProvisionAzureSQLDatabase.ps1 -ResourceGroup Packt -Location "East US 2" -SQLServer sqlserveradsdasd -SQLDatabase testdbsdasdas -Edition Hyperscale 
 Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
-WARNING: The output object type of this cmdlet will be modified in a future release.
+File Not Found C:\Code-AZDB\MyAzureProfile.json
+Login-AzureRmAccount : The term 'Login-AzureRmAccount' is not recognized as the name of a cmdlet, function, script 
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:48 char:16
++     $profile = Login-AzureRmAccount
++                ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Login-AzureRmAccount:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Login-AzureRmAccount : The term 'Login-AzureRmAccount' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:48 char:16
++     $profile = Login-AzureRmAccount
++                ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Login-AzureRmAccount:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Set-AzureRmContext : The term 'Set-AzureRmContext' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:53 char:1
++ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Set-AzureRmContext:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Set-AzureRmContext : The term 'Set-AzureRmContext' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:53 char:1
++ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Set-AzureRmContext:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-AzureRmResourceGroup : The term 'Get-AzureRmResourceGroup' is not recognized as the name of a cmdlet, function, 
+script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is 
+correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:92 char:1
++ Get-AzureRmResourceGroup -Name $ResourceGroup -Location $Location -Er ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmResourceGroup:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Get-AzureRmResourceGroup : The term 'Get-AzureRmResourceGroup' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling
+of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:92 char:1
++ Get-AzureRmResourceGroup -Name $ResourceGroup -Location $Location -Er ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmResourceGroup:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+The Resource 'Microsoft.Network/virtualNetworks/PackvNet-1549045772' under resource group 'Packt' was not found.
+StatusCode: 404
+ReasonPhrase: Not Found
+OperationID : '53629838-ffc3-4fca-b8f0-c975118003c0'
+Get-AzureRmSqlServer : The term 'Get-AzureRmSqlServer' is not recognized as the name of a cmdlet, function, script 
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:113 char:1
++ Get-AzureRmSqlServer -ServerName $SQLServer -ResourceGroupName $Resou ...
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmSqlServer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Get-AzureRmSqlServer : The term 'Get-AzureRmSqlServer' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:113 char:1
++ Get-AzureRmSqlServer -ServerName $SQLServer -ResourceGroupName $Resou ...
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmSqlServer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+The Resource 'Microsoft.Network/virtualNetworks/PackvNet-1549045772' under resource group 'Packt' was not found.
+StatusCode: 404
+ReasonPhrase: Not Found
+OperationID : '53629838-ffc3-4fca-b8f0-c975118003c0'
+Get-AzureRmSqlDatabase : The term 'Get-AzureRmSqlDatabase' is not recognized as the name of a cmdlet, function, script 
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:140 char:1
++ Get-AzureRmSqlDatabase -DatabaseName $SQLDatabase -ServerName $SQLSer ...
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmSqlDatabase:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Get-AzureRmSqlDatabase : The term 'Get-AzureRmSqlDatabase' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of
+the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:140 char:1
++ Get-AzureRmSqlDatabase -DatabaseName $SQLDatabase -ServerName $SQLSer ...
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-AzureRmSqlDatabase:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Provisioning Azure SQL Database testdbsdasdas
+New-AzureRmSqlDatabase : The term 'New-AzureRmSqlDatabase' is not recognized as the name of a cmdlet, function, script 
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:154 char:1
++ New-AzureRmSqlDatabase @_SqlDatabase;
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-AzureRmSqlDatabase:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+New-AzureRmSqlDatabase : The term 'New-AzureRmSqlDatabase' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of
+the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:154 char:1
++ New-AzureRmSqlDatabase @_SqlDatabase;
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-AzureRmSqlDatabase:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Creating firewall rule for  with StartIP: 49.203.218.34 and EndIP: 49.203.218.34
+New-AzureRmSqlServerFirewallRule : The term 'New-AzureRmSqlServerFirewallRule' is not recognized as the name of a 
+cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify 
+that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:180 char:1
++ New-AzureRmSqlServerFirewallRule @NewFirewallRule;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-AzureRmSqlServerFirewallRule:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+New-AzureRmSqlServerFirewallRule : The term 'New-AzureRmSqlServerFirewallRule' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Code-AZDB\Lesson01\ProvisionAzureSQLDatabase.ps1:180 char:1
++ New-AzureRmSqlServerFirewallRule @NewFirewallRule;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-AzureRmSqlServerFirewallRule:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Code-AZDB\Lesson01> clear
+PS C:\Code-AZDB\Lesson01> Enable-AzureRmAlias -Scope CurrentUser
+PS C:\Code-AZDB\Lesson01> clear
+PS C:\Code-AZDB\Lesson01> .\ProvisionAzureSQLDatabase.ps1 -ResourceGroup Packt -Location "East US 2" -SQLServer sqlserveradsdasd -SQLDatabase testdbsdasdas -Edition Hyperscale 
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+File Not Found C:\Code-AZDB\MyAzureProfile.json
+Provisioning Azure Resource Group Packt
 
 
-ResourceGroupName : toystore
+ResourceGroupName : Packt
 Location          : eastus2
 ProvisioningState : Succeeded
 Tags              :
-ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+ResourceId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Packt
 
+Provisioning Azure SQL Server sqlserveradsdasd
 
-
-ResourceGroupName        : toystore
-ServerName               : toyfactory
-Location                 : East US 2
+ResourceGroupName        : Packt
+ServerName               : sqlserveradsdasd
+Location                 : eastus2
 SqlAdministratorLogin    : sqladmin
 SqlAdministratorPassword :
 ServerVersion            : 12.0
 Tags                     :
+Identity                 :
+FullyQualifiedDomainName : sqlserveradsdasd.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Packt/providers/Microsoft.Sql/servers/sqlserveradsdasd
 
+Provisioning Azure SQL Database testdbsdasdas
 
-
-ResourceGroupName             : toystore
-ServerName                    : toyfactory
-DatabaseName                  : toystore
-Location                      : East US 2
-DatabaseId                    : 26c166ce-0f40-4ac3-b087-c29c3aa60a56
-Edition                       : Standard
+ResourceGroupName             : Packt
+ServerName                    : sqlserveradsdasd
+DatabaseName                  : testdbsdasdas
+Location                      : eastus2
+DatabaseId                    : cb053c98-5d3f-4b6b-85f9-4f572da5fb00
+Edition                       : Hyperscale
 CollationName                 : SQL_Latin1_General_CP1_CI_AS
 CatalogCollation              :
-MaxSizeBytes                  : 2147483648
+MaxSizeBytes                  : -1
 Status                        : Online
-CreationDate                  : 12/28/2017 6:58:05 AM
-CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
-CurrentServiceObjectiveName   : S0
-RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
-RequestedServiceObjectiveName :
+CreationDate                  : 4/26/2019 4:04:09 AM
+CurrentServiceObjectiveId     : 00000000-0000-0000-0000-000000000000
+CurrentServiceObjectiveName   : HS_Gen4_1
+RequestedServiceObjectiveName : HS_Gen4_1
+RequestedServiceObjectiveId   :
 ElasticPoolName               :
-EarliestRestoreDate           : 12/28/2017 7:29:18 AM
+EarliestRestoreDate           : 4/26/2019 4:04:09 AM
 Tags                          :
-ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/Microsoft.Sql/servers/toyfactory/databases/toystore
+ResourceId                    : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Packt/providers/Microsoft.Sql/servers/sqlserveradsdasd/databases/testd
+                                bsdasdas
 CreateMode                    :
+ReadScale                     : Enabled
+ZoneRedundant                 :
+Capacity                      : 1
+Family                        : Gen4
+SkuName                       : HS_Gen4
+LicenseType                   : LicenseIncluded
+
+Creating firewall rule for  with StartIP: 49.203.218.34 and EndIP: 49.203.218.34
+
+ResourceGroupName : Packt
+ServerName        : sqlserveradsdasd
+StartIpAddress    : 49.203.218.34
+EndIpAddress      : 49.203.218.34
+FirewallRuleName  : PacktPub_20190426090421
 
 
 
-
-**********************
-Windows PowerShell transcript end
-End time: 20171228232338
-**********************
-**********************
-Windows PowerShell transcript start
-Start time: 20171230093743
-Username: WIN2012R2\Administrator
-RunAs User: WIN2012R2\Administrator
-Machine: WIN2012R2 (Microsoft Windows NT 6.3.9600.0)
-Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1
-Process ID: 5956
-PSVersion: 5.0.10586.117
-PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0.10586.117
-BuildVersion: 10.0.10586.117
-CLRVersion: 4.0.30319.42000
-WSManStackVersion: 3.0
-PSRemotingProtocolVersion: 2.3
-SerializationVersion: 1.1.0.1
-**********************
-Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
-WARNING: The output object type of this cmdlet will be modified in a future release.
-
-
-ResourceGroupName : toystore
-Location          : eastus2
-ProvisioningState : Succeeded
-Tags              :
-ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
-
-
-
-ResourceGroupName        : toystore
-ServerName               : toyfactory
-Location                 : East US 2
-SqlAdministratorLogin    : sqladmin
-SqlAdministratorPassword :
-ServerVersion            : 12.0
-Tags                     :
-
-
-
-ResourceGroupName             : toystore
-ServerName                    : toyfactory
-DatabaseName                  : toystore
-Location                      : East US 2
-DatabaseId                    : 26c166ce-0f40-4ac3-b087-c29c3aa60a56
-Edition                       : Standard
-CollationName                 : SQL_Latin1_General_CP1_CI_AS
-CatalogCollation              :
-MaxSizeBytes                  : 2147483648
-Status                        : Online
-CreationDate                  : 12/28/2017 6:58:05 AM
-CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
-CurrentServiceObjectiveName   : S0
-RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
-RequestedServiceObjectiveName :
-ElasticPoolName               :
-EarliestRestoreDate           : 12/28/2017 7:29:18 AM
-Tags                          :
-ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/Microsoft.Sql/servers/toyfactory/databases/toystore
-CreateMode                    :
-
-
-Creating firewall rule for  with StartIP: 49.203.218.163 and EndIP: 49.203.218.163
-
-ResourceGroupName : toystore
-ServerName        : toyfactory
-StartIpAddress    : 49.203.218.163
-EndIpAddress      : 49.203.218.163
-FirewallRuleName  : PacktPub
-
-
-
-PS C:\Code\Lesson01> cd/
+PS C:\Code-AZDB\Lesson01> cd/
 cd/ : The term 'cd/' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
 spelling of the name, or if a path was included, verify that the path is correct and try again.
 At line:1 char:1
@@ -258,671 +487,4 @@ At line:1 char:1
     + CategoryInfo          : ObjectNotFound: (cd/:String) [], CommandNotFoundException
     + FullyQualifiedErrorId : CommandNotFoundException
 
-**********************
-Windows PowerShell transcript end
-End time: 20171231121500
-**********************
-**********************
-Windows PowerShell transcript start
-Start time: 20180205074905
-Username: WIN2012R2\Administrator
-RunAs User: WIN2012R2\Administrator
-Machine: WIN2012R2 (Microsoft Windows NT 6.3.9600.0)
-Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-Process ID: 6316
-PSVersion: 5.1.14409.1005
-PSEdition: Desktop
-PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14409.1005
-BuildVersion: 10.0.14409.1005
-CLRVersion: 4.0.30319.42000
-WSManStackVersion: 3.0
-PSRemotingProtocolVersion: 2.3
-SerializationVersion: 1.1.0.1
-**********************
-Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
-Select-AzureRmProfile : Cannot find file '..\MyAzureProfile.json'
-At C:\code\lesson01\ProvisionAzureSQLDatabase.ps1:34 char:16
-+     $profile = Select-AzureRmProfile -Path $AzureProfileFilePath
-+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Import-AzureRmContext], PSArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.ImportAzureRMContextCommand
-Select-AzureRmProfile : Cannot find file '..\MyAzureProfile.json'
-At C:\code\lesson01\ProvisionAzureSQLDatabase.ps1:34 char:16
-+     $profile = Select-AzureRmProfile -Path $AzureProfileFilePath
-+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Import-AzureRmContext], PSArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.ImportAzureRMContextCommand
-
-PS>TerminatingError(Set-AzureRmContext): "Cannot validate argument on parameter 'Subscription'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
-Set-AzureRmContext : Cannot validate argument on parameter 'Subscription'. The argument is null or empty. Provide an 
-argument that is not null or empty, and then try the command again.
-At C:\code\lesson01\ProvisionAzureSQLDatabase.ps1:49 char:36
-+ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
-+                                    ~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidData: (:) [Set-AzureRmContext], ParameterBindingValidationException
-    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
-Set-AzureRmContext : Cannot validate argument on parameter 'Subscription'. The argument is null or empty. Provide an
-argument that is not null or empty, and then try the command again.
-At C:\code\lesson01\ProvisionAzureSQLDatabase.ps1:49 char:36
-+ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
-+                                    ~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidData: (:) [Set-AzureRmContext], ParameterBindingValidationException
-    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Profile.SetAzureRMContextComma
-   nd
-
-Provisioning Azure Resource Group toystore
-New-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
-At C:\code\lesson01\ProvisionAzureSQLDatabase.ps1:65 char:1
-+ New-AzureRmResourceGroup @_ResourceGroup;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [New-AzureRmResourceGroup], PSInvalidOperationException
-    + FullyQualifiedErrorId : 
-Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation.NewAzureResourceGroupCmdlet
-New-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
-At C:\code\lesson01\ProvisionAzureSQLDatabase.ps1:65 char:1
-+ New-AzureRmResourceGroup @_ResourceGroup;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [New-AzureRmResourceGroup], PSInvalidOperationException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation.NewAzureResourceGroupCmd
-   let
-
-Provisioning Azure SQL Server toyfactory
-New-AzureRmSqlServer : Run Login-AzureRmAccount to login.
-At C:\code\lesson01\ProvisionAzureSQLDatabase.ps1:91 char:1
-+ New-AzureRmSqlServer @_SqlServer;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [New-AzureRmSqlServer], PSInvalidOperationException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
-New-AzureRmSqlServer : Run Login-AzureRmAccount to login.
-At C:\code\lesson01\ProvisionAzureSQLDatabase.ps1:91 char:1
-+ New-AzureRmSqlServer @_SqlServer;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [New-AzureRmSqlServer], PSInvalidOperationException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
-
-Provisioning Azure SQL Database toystore10483
-New-AzureRmSqlDatabase : No account found in the context. Please login using Login-AzureRMAccount.
-At C:\code\lesson01\ProvisionAzureSQLDatabase.ps1:115 char:1
-+ New-AzureRmSqlDatabase @_SqlDatabase;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [New-AzureRmSqlDatabase], ArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Database.Cmdlet.NewAzureSqlDatabase
->> TerminatingError(): "The pipeline has been stopped."
->> TerminatingError(): "The pipeline has been stopped."
->> TerminatingError(): "The pipeline has been stopped."
-PS C:\code\lesson01> clear
-PS C:\code\lesson01> cd/
-cd/ : The term 'cd/' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
-spelling of the name, or if a path was included, verify that the path is correct and try again.
-At line:1 char:1
-+ cd/
-+ ~~~
-    + CategoryInfo          : ObjectNotFound: (cd/:String) [], CommandNotFoundException
-    + FullyQualifiedErrorId : CommandNotFoundException
-cd/ : The term 'cd/' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
-spelling of the name, or if a path was included, verify that the path is correct and try again.
-At line:1 char:1
-+ cd/
-+ ~~~
-    + CategoryInfo          : ObjectNotFound: (cd/:String) [], CommandNotFoundException
-    + FullyQualifiedErrorId : CommandNotFoundException
-
-PS C:\code\lesson01> cd  /
-PS C:\> clear
-PS C:\> powershell.exe "C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1 -ResourceGroup toystore -SQLServer toyfactory -SQLDatabase tobedeleted"
-PS C:\> powershell.exe "C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1 -ResourceGroup toystore -SQLServer toyfactory -SQLDatabase tobedeleted"
-PS C:\> powershell.exe "C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1 -ResourceGroup toystore -SQLServer toyfactory -SQLDatabase tobedeleted"
-PS C:\> C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1 -ResourceGroup toystore -SQLServer toyfactory -SQLDatabase tobedeleted
-Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
-
-
-ResourceGroupName : toystore
-Location          : eastus2
-ProvisioningState : Succeeded
-Tags              :
-ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
-
-
-
-ResourceGroupName        : toystore
-ServerName               : toyfactory
-Location                 : eastus2
-SqlAdministratorLogin    : sqladmin
-SqlAdministratorPassword :
-ServerVersion            : 12.0
-Tags                     :
-Identity                 :
-
-
-
-ResourceGroupName             : toystore
-ServerName                    : toyfactory
-DatabaseName                  : tobedeleted
-Location                      : East US 2
-DatabaseId                    : 3911501d-b3ea-46c3-9e6e-524ef34acd92
-Edition                       : Basic
-CollationName                 : SQL_Latin1_General_CP1_CI_AS
-CatalogCollation              :
-MaxSizeBytes                  : 2147483648
-Status                        : Online
-CreationDate                  : 2/5/2018 2:29:01 AM
-CurrentServiceObjectiveId     : dd6d99bb-f193-4ec1-86f2-43d3bccbc49c
-CurrentServiceObjectiveName   : Basic
-RequestedServiceObjectiveId   : dd6d99bb-f193-4ec1-86f2-43d3bccbc49c
-RequestedServiceObjectiveName :
-ElasticPoolName               :
-EarliestRestoreDate           : 2/5/2018 3:00:14 AM
-Tags                          :
-ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
-                                icrosoft.Sql/servers/toyfactory/databases/tobedeleted
-CreateMode                    :
-ReadScale                     : Disabled
-ZoneRedundant                 : False
-
-
-Creating firewall rule for  with StartIP: 182.156.96.114 and EndIP: 182.156.96.114
-New-AzureRmSqlServerFirewallRule : Firewall Rule with name: 'PacktPub_201802050802' already exists for server 
-'toyfactory'.
-At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:143 char:1
-+ New-AzureRmSqlServerFirewallRule @NewFirewallRule;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [New-AzureRmSqlServerFirewallRule], PSArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FirewallRule.Cmdlet.NewAzureSqlServerFirewallRule
-New-AzureRmSqlServerFirewallRule : Firewall Rule with name: 'PacktPub_201802050802' already exists for server
-'toyfactory'.
-At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:143 char:1
-+ New-AzureRmSqlServerFirewallRule @NewFirewallRule;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [New-AzureRmSqlServerFirewallRule], PSArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FirewallRule.Cmdlet.NewAzureSqlServerFirewallRule
-
-
-
-PS C:\> C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1 -ResourceGroup toystore -SQLServer toyfactory -SQLDatabase tobedeleted
-Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
-
-
-ResourceGroupName : toystore
-Location          : eastus2
-ProvisioningState : Succeeded
-Tags              :
-ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
-
-
-
-ResourceGroupName        : toystore
-ServerName               : toyfactory
-Location                 : eastus2
-SqlAdministratorLogin    : sqladmin
-SqlAdministratorPassword :
-ServerVersion            : 12.0
-Tags                     :
-Identity                 :
-
-
-
-ResourceGroupName             : toystore
-ServerName                    : toyfactory
-DatabaseName                  : tobedeleted
-Location                      : East US 2
-DatabaseId                    : 3911501d-b3ea-46c3-9e6e-524ef34acd92
-Edition                       : Basic
-CollationName                 : SQL_Latin1_General_CP1_CI_AS
-CatalogCollation              :
-MaxSizeBytes                  : 2147483648
-Status                        : Online
-CreationDate                  : 2/5/2018 2:29:01 AM
-CurrentServiceObjectiveId     : dd6d99bb-f193-4ec1-86f2-43d3bccbc49c
-CurrentServiceObjectiveName   : Basic
-RequestedServiceObjectiveId   : dd6d99bb-f193-4ec1-86f2-43d3bccbc49c
-RequestedServiceObjectiveName :
-ElasticPoolName               :
-EarliestRestoreDate           : 2/5/2018 3:00:14 AM
-Tags                          :
-ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
-                                icrosoft.Sql/servers/toyfactory/databases/tobedeleted
-CreateMode                    :
-ReadScale                     : Disabled
-ZoneRedundant                 : False
-
-
-Creating firewall rule for  with StartIP: 182.156.96.114 and EndIP: 182.156.96.114
-
-ResourceGroupName : toystore
-ServerName        : toyfactory
-StartIpAddress    : 182.156.96.114
-EndIpAddress      : 182.156.96.114
-FirewallRuleName  : PacktPub_20180205080245
-
-
-
-PS C:\> C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1 -ResourceGroup toystore -SQLServer toyfactory -SQLDatabase tobedeleted
-Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
-
-
-ResourceGroupName : toystore
-Location          : eastus2
-ProvisioningState : Succeeded
-Tags              :
-ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
-
-
-
-ResourceGroupName        : toystore
-ServerName               : toyfactory
-Location                 : eastus2
-SqlAdministratorLogin    : sqladmin
-SqlAdministratorPassword :
-ServerVersion            : 12.0
-Tags                     :
-Identity                 :
-
-
-
-ResourceGroupName             : toystore
-ServerName                    : toyfactory
-DatabaseName                  : tobedeleted
-Location                      : East US 2
-DatabaseId                    : 3911501d-b3ea-46c3-9e6e-524ef34acd92
-Edition                       : Basic
-CollationName                 : SQL_Latin1_General_CP1_CI_AS
-CatalogCollation              :
-MaxSizeBytes                  : 2147483648
-Status                        : Online
-CreationDate                  : 2/5/2018 2:29:01 AM
-CurrentServiceObjectiveId     : dd6d99bb-f193-4ec1-86f2-43d3bccbc49c
-CurrentServiceObjectiveName   : Basic
-RequestedServiceObjectiveId   : dd6d99bb-f193-4ec1-86f2-43d3bccbc49c
-RequestedServiceObjectiveName :
-ElasticPoolName               :
-EarliestRestoreDate           : 2/5/2018 3:00:14 AM
-Tags                          :
-ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
-                                icrosoft.Sql/servers/toyfactory/databases/tobedeleted
-CreateMode                    :
-ReadScale                     : Disabled
-ZoneRedundant                 : False
-
-
-Creating firewall rule for  with StartIP: 182.156.96.114 and EndIP: 182.156.96.114
-
-ResourceGroupName : toystore
-ServerName        : toyfactory
-StartIpAddress    : 182.156.96.114
-EndIpAddress      : 182.156.96.114
-FirewallRuleName  : PacktPub_20180205080205
-
-
-
-PS C:\> clear
-PS C:\> cd c:\code\lesson09
-PS C:\code\lesson09> cd ..
-PS C:\code> cd .\lesson08\ActiveGeoReplication
-PS C:\code\lesson08\ActiveGeoReplication> clear
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-ActiveGeoReplication.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory-centralus -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore" -Operation "Add" -AzureProfileFilePath C:\Code\MyAzureProfile.json
-Transcript started, output file is .\Log\Manage-ActiveGeoReplication.txt
-Provisioning Azure SQL Server toyfactory-centralus
-
-
-ResourceGroupName        : toystore
-ServerName               : toyfactory-centralus
-Location                 : centralus
-SqlAdministratorLogin    : sqladmin
-SqlAdministratorPassword :
-ServerVersion            : 12.0
-Tags                     :
-Identity                 :
-
-Replicating database toystore to toyfactory-centralus
-LinkId                   : 5637cf5a-fc86-4ea6-b2ea-81445a906a99
-ResourceGroupName        : toystore
-ServerName               : toyfactory
-DatabaseName             : toystore
-Role                     : Primary
-Location                 : East US 2
-PartnerResourceGroupName : toystore
-PartnerServerName        : toyfactory-centralus
-PartnerRole              : Secondary
-PartnerLocation          : Central US
-AllowConnections         : All
-ReplicationState         : CATCH_UP
-PercentComplete          : 100
-StartTime                : 2/7/2018 5:32:31 PM
-
-
-
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-ActiveGeoReplication.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory-centralus -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore" -Operation "Remove" -AzureProfileFilePath C:\Code\MyAzureProfile.json
-Transcript started, output file is .\Log\Manage-ActiveGeoReplication.txt
-
-Removing replication for database toystore
-
-
-LinkId                   : 5637cf5a-fc86-4ea6-b2ea-81445a906a99
-ResourceGroupName        : toystore
-ServerName               : toyfactory
-DatabaseName             : toystore
-Role                     : Primary
-Location                 : East US 2
-PartnerResourceGroupName : toystore
-PartnerServerName        : toyfactory-centralus
-PartnerRole              : Secondary
-PartnerLocation          : Central US
-AllowConnections         : All
-ReplicationState         : CATCH_UP
-PercentComplete          : 100
-StartTime                : 2/7/2018 5:32:31 PM
-
-
-
-PS C:\code\lesson08\ActiveGeoReplication> clear
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-FailoverGroup.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory-centralus -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore" -Operation "Create" -FailoverGroupName toyfactoryfailovergroup -AzureProfileFilePath c:\Code\MyAzureProfile.json
-Transcript started, output file is .\Log\Manage-FailoverGroup.txt
-
-
-ResourceGroupName        : toystore
-ServerName               : toyfactory-centralus
-Location                 : centralus
-SqlAdministratorLogin    : sqladmin
-SqlAdministratorPassword :
-ServerVersion            : 12.0
-Tags                     :
-Identity                 :
-
-
-Creating the failover group toyfactoryfailovergroup
-
-
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-FailoverGroup.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory-centralus -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore" -Operation "Create" -FailoverGroupName toyfactoryfailovergroup -AzureProfileFilePath c:\Code\MyAzureProfile.json
-Transcript started, output file is .\Log\Manage-FailoverGroup.txt
-
-
-ResourceGroupName        : toystore
-ServerName               : toyfactory-centralus
-Location                 : centralus
-SqlAdministratorLogin    : sqladmin
-SqlAdministratorPassword :
-ServerVersion            : 12.0
-Tags                     :
-Identity                 :
-
-
-Creating the failover group toyfactoryfailovergroup
-New-AzureRMSqlDatabaseFailoverGroup : Failover Group with name: 'toyfactoryfailovergroup' already exists in server 
-'toyfactory'.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:87 char:18
-+ $failovergroup = New-AzureRMSqlDatabaseFailoverGroup `
-+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [New-AzureRmSqlDatabaseFailoverGroup], PSArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.NewAzureSqlFailoverGroup
-New-AzureRMSqlDatabaseFailoverGroup : Failover Group with name: 'toyfactoryfailovergroup' already exists in server
-'toyfactory'.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:87 char:18
-+ $failovergroup = New-AzureRMSqlDatabaseFailoverGroup `
-+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [New-AzureRmSqlDatabaseFailoverGroup], PSArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.NewAzureSqlFailoverGroup
-
-Adding database toystore to failover group toyfactoryfailovergroup
-Add-AzureRmSqlDatabaseToFailoverGroup : FailoverGroupUnableToPerformGroupOperationOnDatabases: The operation cannot be 
-performed due to multiple errors.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:107 char:9
-+         Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName $Res ...
-+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Add-AzureRmSqlDatabaseToFailoverGroup], CloudException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.AddAzureSqlDatabaseToFailoverGroup
-Add-AzureRmSqlDatabaseToFailoverGroup : FailoverGroupUnableToPerformGroupOperationOnDatabases: The operation cannot be
-performed due to multiple errors.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:107 char:9
-+         Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName $Res ...
-+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Add-AzureRmSqlDatabaseToFailoverGroup], CloudException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.AddAzureSqlDatabaseToFailoverGroup
-
-
-
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-FailoverGroup.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory-centralus -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore" -Operation "Create" -FailoverGroupName toyfactoryfailovergroup -AzureProfileFilePath c:\Code\MyAzureProfile.json
-Transcript started, output file is .\Log\Manage-FailoverGroup.txt
-
-
-ResourceGroupName        : toystore
-ServerName               : toyfactory-centralus
-Location                 : centralus
-SqlAdministratorLogin    : sqladmin
-SqlAdministratorPassword :
-ServerVersion            : 12.0
-Tags                     :
-Identity                 :
-
-
-Creating the failover group toyfactoryfailovergroup
-New-AzureRMSqlDatabaseFailoverGroup : Failover Group with name: 'toyfactoryfailovergroup' already exists in server 
-'toyfactory'.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:87 char:18
-+ $failovergroup = New-AzureRMSqlDatabaseFailoverGroup `
-+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [New-AzureRmSqlDatabaseFailoverGroup], PSArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.NewAzureSqlFailoverGroup
-New-AzureRMSqlDatabaseFailoverGroup : Failover Group with name: 'toyfactoryfailovergroup' already exists in server
-'toyfactory'.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:87 char:18
-+ $failovergroup = New-AzureRMSqlDatabaseFailoverGroup `
-+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [New-AzureRmSqlDatabaseFailoverGroup], PSArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.NewAzureSqlFailoverGroup
-
-Adding database toystore to failover group toyfactoryfailovergroup
-Add-AzureRmSqlDatabaseToFailoverGroup : FailoverGroupUnableToPerformGroupOperationOnDatabases: The operation cannot be 
-performed due to multiple errors.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:107 char:9
-+         Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName $Res ...
-+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Add-AzureRmSqlDatabaseToFailoverGroup], CloudException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.AddAzureSqlDatabaseToFailoverGroup
-Add-AzureRmSqlDatabaseToFailoverGroup : FailoverGroupUnableToPerformGroupOperationOnDatabases: The operation cannot be
-performed due to multiple errors.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:107 char:9
-+         Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName $Res ...
-+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Add-AzureRmSqlDatabaseToFailoverGroup], CloudException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.AddAzureSqlDatabaseToFailoverGroup
-
-
-
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-ActiveGeoReplication.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory-centralus -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore" -Operation "Remove" -AzureProfileFilePath C:\Code\MyAzureProfile.json
-Transcript started, output file is .\Log\Manage-ActiveGeoReplication.txt
-
-Removing replication for database toystore
-Remove-AzureRmSqlDatabaseSecondary : Object reference not set to an instance of an object.
-At C:\code\lesson08\ActiveGeoReplication\Manage-ActiveGeoReplication.ps1:116 char:21
-+ ... $database | Remove-AzureRmSqlDatabaseSecondary -PartnerResourceGroupN ...
-+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Remove-AzureRmSqlDatabaseSecondary], NullReferenceException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Replication.Cmdlet.RemoveAzureSqlDatabaseSecondary
-Remove-AzureRmSqlDatabaseSecondary : Object reference not set to an instance of an object.
-At C:\code\lesson08\ActiveGeoReplication\Manage-ActiveGeoReplication.ps1:116 char:21
-+ ... $database | Remove-AzureRmSqlDatabaseSecondary -PartnerResourceGroupN ...
-+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Remove-AzureRmSqlDatabaseSecondary], NullReferenceException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Replication.Cmdlet.RemoveAzureSqlDatabaseSecondary
-
-PS C:\code\lesson08\ActiveGeoReplication> clear
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-FailoverGroup.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory-centralus -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore" -Operation "Create" -FailoverGroupName toyfactoryfailovergroup -AzureProfileFilePath c:\Code\MyAzureProfile.json
-Transcript started, output file is .\Log\Manage-FailoverGroup.txt
-
-
-ResourceGroupName        : toystore
-ServerName               : toyfactory-centralus
-Location                 : centralus
-SqlAdministratorLogin    : sqladmin
-SqlAdministratorPassword :
-ServerVersion            : 12.0
-Tags                     :
-Identity                 :
-
-
-Creating the failover group toyfactoryfailovergroup
-New-AzureRMSqlDatabaseFailoverGroup : Failover Group with name: 'toyfactoryfailovergroup' already exists in server 
-'toyfactory'.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:87 char:18
-+ $failovergroup = New-AzureRMSqlDatabaseFailoverGroup `
-+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [New-AzureRmSqlDatabaseFailoverGroup], PSArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.NewAzureSqlFailoverGroup
-New-AzureRMSqlDatabaseFailoverGroup : Failover Group with name: 'toyfactoryfailovergroup' already exists in server
-'toyfactory'.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:87 char:18
-+ $failovergroup = New-AzureRMSqlDatabaseFailoverGroup `
-+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [New-AzureRmSqlDatabaseFailoverGroup], PSArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.NewAzureSqlFailoverGroup
-
-Adding database toystore to failover group toyfactoryfailovergroup
-Add-AzureRmSqlDatabaseToFailoverGroup : FailoverGroupUnableToPerformGroupOperationOnDatabases: The operation cannot be 
-performed due to multiple errors.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:107 char:9
-+         Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName $Res ...
-+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Add-AzureRmSqlDatabaseToFailoverGroup], CloudException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.AddAzureSqlDatabaseToFailoverGroup
-Add-AzureRmSqlDatabaseToFailoverGroup : FailoverGroupUnableToPerformGroupOperationOnDatabases: The operation cannot be
-performed due to multiple errors.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:107 char:9
-+         Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName $Res ...
-+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Add-AzureRmSqlDatabaseToFailoverGroup], CloudException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.AddAzureSqlDatabaseToFailoverGroup
-
-
-
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-FailoverGroup.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory-centralus -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore" -Operation "Create" -FailoverGroupName toyfactoryfailovergroup -AzureProfileFilePath c:\Code\MyAzureProfile.json
-Transcript started, output file is .\Log\Manage-FailoverGroup.txt
-Provisioning Azure SQL Server toyfactory-centralus
-PS C:\code\lesson08\ActiveGeoReplication> TerminatingError(): "The pipeline has been stopped."
->> TerminatingError(): "The pipeline has been stopped."
->> TerminatingError(): "The pipeline has been stopped."
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-FailoverGroup.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory-centralus -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore" -Operation "Create" -FailoverGroupName toyfactory0failovergroup -AzureProfileFilePath c:\Code\MyAzureProfile.json
-Transcript started, output file is .\Log\Manage-FailoverGroup.txt
-Provisioning Azure SQL Server toyfactory-centralus
-
-
-ResourceGroupName        : toystore
-ServerName               : toyfactory-centralus
-Location                 : centralus
-SqlAdministratorLogin    : sqladmin
-SqlAdministratorPassword :
-ServerVersion            : 12.0
-Tags                     :
-Identity                 :
-
-Creating the failover group toyfactory0failovergroup
-Adding database toystore to failover group toyfactory0failovergroup
-ResourceGroupName                    : toystore
-ServerName                           : toyfactory
-FailoverGroupName                    : toyfactory0failovergroup
-FailoverGroupReadWriteEndpoint       :
-FailoverGroupReadOnlyEndpoint        :
-PartnerServers                       : {/subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/pro
-                                       viders/Microsoft.Sql/servers/toyfactory-centralus}
-PartnerResourceGroupName             : toystore
-PartnerServerName                    : toyfactory-centralus
-PartnerLocation                      : Central US
-Databases                            : {/subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/pro
-                                       viders/Microsoft.Sql/servers/toyfactory/databases/toystore}
-DatabaseNames                        : {toystore}
-ReplicationRole                      : Primary
-ReplicationState                     : CATCH_UP
-ReadWriteFailoverPolicy              : Automatic
-FailoverWithDataLossGracePeriodHours : 1
-ReadOnlyFailoverPolicy               : Disabled
-Id                                   : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/prov
-                                       iders/Microsoft.Sql/servers/toyfactory/failoverGroups/toyfactory0failovergroup
-Location                             : East US 2
-Kind                                 :
-Tags                                 :
-
-
-
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-FailoverGroup.ps1 -ResourceGroup toystore -SecondarySqlServer toyfactory-centralus -FailoverGroupName toyfactoryfailovergroup -Failover $true -AzureProfileFilePath c:\Code\MyAzureProfile.json
-Transcript started, output file is .\Log\Manage-FailoverGroup.txt
-PS C:\code\lesson08\ActiveGeoReplication> TerminatingError(): "The pipeline has been stopped."
->> TerminatingError(): "The pipeline has been stopped."
->> TerminatingError(): "The pipeline has been stopped."
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-FailoverGroup.ps1 -ResourceGroup toystore -SecondarySqlServer toyfactory-centralus -FailoverGroupName toyfactory0failovergroup -Failover $true -AzureProfileFilePath c:\Code\MyAzureProfile.json
-Transcript started, output file is .\Log\Manage-FailoverGroup.txt
-Failover to secondary server toyfactory-centralus
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-FailoverGroup.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory-centralus -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore_Shard_100_150,toystore_Shard_150_200" -Operation "Remove" -FailoverGroupName toyfactoryfailovergroup -AzureProfileFilePath c:\Code\MyAzureProfile.json  
-Transcript started, output file is .\Log\Manage-FailoverGroup.txt
-PS C:\code\lesson08\ActiveGeoReplication> TerminatingError(): "The pipeline has been stopped."
->> TerminatingError(): "The pipeline has been stopped."
->> TerminatingError(): "The pipeline has been stopped."
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-FailoverGroup.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory-centralus -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore" -Operation "Remove" -FailoverGroupName toyfactor0yfailovergroup -AzureProfileFilePath c:\Code\MyAzureProfile.json  
-Transcript started, output file is .\Log\Manage-FailoverGroup.txt
-Deleting the failover group toyfactor0yfailovergroup
-Remove-AzureRmSqlDatabaseFailoverGroup : ResourceNotFound: The requested resource of type 
-'Microsoft.Sql/servers/failoverGroups' with name 'toyfactor0yfailovergroup' was not found.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:123 char:1
-+ Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName $ResourceGr ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Remove-AzureRmSqlDatabaseFailoverGroup], CloudException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.RemoveAzureSqlFailoverGroup
-Remove-AzureRmSqlDatabaseFailoverGroup : ResourceNotFound: The requested resource of type
-'Microsoft.Sql/servers/failoverGroups' with name 'toyfactor0yfailovergroup' was not found.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:123 char:1
-+ Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName $ResourceGr ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Remove-AzureRmSqlDatabaseFailoverGroup], CloudException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.FailoverGroup.Cmdlet.RemoveAzureSqlFailoverGroup
-
-Removing replication for database toystore
-Remove-AzureRmSqlDatabaseSecondary : 40926: The operation cannot be performed because the geo-replication link is part 
-of a Failover Group. You must remove the database from the group in order to individually terminate or failover.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:132 char:21
-+ ... $database | Remove-AzureRmSqlDatabaseSecondary -PartnerResourceGroupN ...
-+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Remove-AzureRmSqlDatabaseSecondary], CloudException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Replication.Cmdlet.RemoveAzureSqlDatabaseSecondary
-Remove-AzureRmSqlDatabaseSecondary : 40926: The operation cannot be performed because the geo-replication link is part
-of a Failover Group. You must remove the database from the group in order to individually terminate or failover.
-At C:\code\lesson08\ActiveGeoReplication\Manage-FailoverGroup.ps1:132 char:21
-+ ... $database | Remove-AzureRmSqlDatabaseSecondary -PartnerResourceGroupN ...
-+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Remove-AzureRmSqlDatabaseSecondary], CloudException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Sql.Replication.Cmdlet.RemoveAzureSqlDatabaseSecondary
-
-PS C:\code\lesson08\ActiveGeoReplication> .\Manage-FailoverGroup.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory-centralus -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore" -Operation "Remove" -FailoverGroupName toyfactory0failovergroup -AzureProfileFilePath c:\Code\MyAzureProfile.json  
-Transcript started, output file is .\Log\Manage-FailoverGroup.txt
-Deleting the failover group toyfactory0failovergroup
-
-
-FailoverGroupName                    : toyfactory0failovergroup
-Location                             : Central US
-ResourceGroupName                    : toystore
-ServerName                           : toyfactory-centralus
-PartnerLocation                      : East US 2
-PartnerResourceGroupName             : toystore
-PartnerServerName                    : toyfactory
-ReplicationRole                      : Primary
-ReplicationState                     : CATCH_UP
-ReadWriteFailoverPolicy              : Automatic
-FailoverWithDataLossGracePeriodHours : 1
-DatabaseNames                        : {toystore}
-
-Removing replication for database toystore
-
-LinkId                   : 79c2b9b2-4951-4956-b6ae-ccb18aba0c73
-ResourceGroupName        : toystore
-ServerName               : toyfactory-centralus
-DatabaseName             : toystore
-Role                     : Primary
-Location                 : Central US
-PartnerResourceGroupName : toystore
-PartnerServerName        : toyfactory
-PartnerRole              : Secondary
-PartnerLocation          : East US 2
-AllowConnections         : All
-ReplicationState         : CATCH_UP
-PercentComplete          : 100
-StartTime                : 2/8/2018 2:18:20 AM
-
-
-
+PS C:\Code-AZDB\Lesson01> cd /
