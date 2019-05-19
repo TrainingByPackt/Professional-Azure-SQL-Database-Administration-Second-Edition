@@ -1,0 +1,523 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20171224170422
+Username: WIN2012R2\Administrator
+RunAs User: WIN2012R2\Administrator
+Machine: WIN2012R2 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 5996
+PSVersion: 5.0.10586.117
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0.10586.117
+BuildVersion: 10.0.10586.117
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\Log\Shard-toystore.txt
+WARNING: The output object type of this cmdlet will be modified in a future release.
+
+
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_SMM
+Location                      : East US 2
+DatabaseId                    : 11a88b57-544e-43dc-a42b-03ecf191a9f6
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 4:28:50 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 5:00:13 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_SMM
+CreateMode                    :
+
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_Shard_2
+**********************
+Windows PowerShell transcript end
+End time: 20171224171117
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20171224171329
+Username: WIN2012R2\Administrator
+RunAs User: WIN2012R2\Administrator
+Machine: WIN2012R2 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7308
+PSVersion: 5.0.10586.117
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0.10586.117
+BuildVersion: 10.0.10586.117
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\Log\Shard-toystore.txt
+WARNING: The output object type of this cmdlet will be modified in a future release.
+
+
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_SMM
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_SMM
+Location                      : East US 2
+DatabaseId                    : 940a9db9-a334-4953-a62c-731b699c4d8d
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/24/2017 11:43:42 AM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/24/2017 12:14:58 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_SMM
+CreateMode                    :
+
+PS>TerminatingError(Set-AzureSqlDatabase): "Cannot validate argument on parameter 'Database'. The argument is null. Provide a valid value for the argument, and then try running the command again."
+Set-AzureSqlDatabase : Cannot validate argument on parameter 'Database'. The argument is null. Provide a valid value 
+for the argument, and then try running the command again.
+At C:\code\lesson06\sharding\shard-toystore.ps1:85 char:69
++ ... ectionContext $SqlServerContext -Database $SqlDatabaseContext -NewDat ...
++                                               ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureSqlDatabase], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.WindowsAzure.Commands.SqlDatabase.Database.Cmdlet.SetAzureSqlDatabase
+Set-AzureSqlDatabase : Cannot validate argument on parameter 'Database'. The argument is null. Provide a valid value
+for the argument, and then try running the command again.
+At C:\code\lesson06\sharding\shard-toystore.ps1:85 char:69
++ ... ectionContext $SqlServerContext -Database $SqlDatabaseContext -NewDat ...
++                                               ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureSqlDatabase], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.WindowsAzure.Commands.SqlDatabase.Database.Cm
+   dlet.SetAzureSqlDatabase
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_Shard_2
+Location                      : East US 2
+DatabaseId                    : bcd2a249-b014-4509-a2a5-e7a0acf004c9
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/24/2017 11:40:30 AM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/24/2017 12:11:32 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_Shard_2
+CreateMode                    :
+
+
+Creating table 1_CreateSchemas.sql in toystore_Shard_2
+Creating table 2_Application.Countries.sql in toystore_Shard_2
+Creating table 3_Sales.Customer.sql in toystore_Shard_2
+Creating table 4_Sales.Orders.sql in toystore_Shard_2
+Configuring database toystore_SMM as Shard Map Manager
+Adding toystore_Shard_1 and toystore_Shard_2 to the Shard Map toystorerangemap
+PS>TerminatingError(Add-Shard): "Exception calling "CreateShard" with "1" argument(s): "Store Error: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server). The error occurred while attempting to perform the underlying storage operation during 'Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.StoreException: Error occurred while performing store operation. See the inner SqlException for details. ---> System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception: The network path was not found
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.SqlStoreConnection.<>c__DisplayClass3.<OpenWithLock>b__2()
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.SqlUtils.WithSqlExceptionHandling(Action operation)
+   --- End of inner exception stack trace ---
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.SqlUtils.WithSqlExceptionHandling(Action operation)
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.SqlStoreConnection.OpenWithLock(Guid lockId)
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.StoreOperation.EstablishConnnections(Boolean undo)
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.StoreOperation.<Do>b__0()
+   at Microsoft.Azure.SqlDatabase.ElasticScale.TransientFaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.StoreOperation.Do()' operation on shard 'CreateShard'. See the inner StoreException for details.""
+Add-Shard : Exception calling "CreateShard" with "1" argument(s): "Store Error: A network-related or instance-specific 
+error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify 
+that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes 
+Provider, error: 40 - Could not open a connection to SQL Server). The error occurred while attempting to perform the 
+underlying storage operation during 'Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.StoreException: Error 
+occurred while performing store operation. See the inner SqlException for details. ---> 
+System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a 
+connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and 
+that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open 
+a connection to SQL Server) ---> System.ComponentModel.Win32Exception: The network path was not found
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString 
+connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, 
+Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, 
+DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey 
+poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions 
+userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection 
+owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions 
+userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions 
+userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 
+waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, 
+DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 
+retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, 
+TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, 
+DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, 
+DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at 
+Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.SqlStoreConnection.<>c__DisplayClass3.<OpenWithLock>b__2()
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.SqlUtils.WithSqlExceptionHandling(Action operation)
+   --- End of inner exception stack trace ---
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.SqlUtils.WithSqlExceptionHandling(Action operation)
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.SqlStoreConnection.OpenWithLock(Guid lockId)
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.StoreOperation.EstablishConnnections(Boolean undo)
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.StoreOperation.<Do>b__0()
+   at Microsoft.Azure.SqlDatabase.ElasticScale.TransientFaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.StoreOperation.Do()' operation on shard 'CreateShard'. 
+See the inner StoreException for details."
+At C:\code\lesson06\sharding\shard-toystore.ps1:117 char:5
++     Add-Shard -ShardMap $ShardMap -SqlServerName $SQLServerFQDN -SqlD ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Add-Shard], MethodInvocationException
+    + FullyQualifiedErrorId : ShardManagementException,Add-Shard
+Add-Shard : Exception calling "CreateShard" with "1" argument(s): "Store Error: A network-related or instance-specific
+error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify
+that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named
+Pipes Provider, error: 40 - Could not open a connection to SQL Server). The error occurred while attempting to perform
+the underlying storage operation during 'Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.StoreException:
+Error occurred while performing store operation. See the inner SqlException for details. --->
+System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a
+connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and
+that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open
+a connection to SQL Server) ---> System.ComponentModel.Win32Exception: The network path was not found
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString
+connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword,
+Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData,
+DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey
+poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions
+userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection
+owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions
+userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions
+userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32
+waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions,
+DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1
+retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection,
+TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection,
+DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection,
+DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at
+Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.SqlStoreConnection.<>c__DisplayClass3.<OpenWithLock>b__2()
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.SqlUtils.WithSqlExceptionHandling(Action operation)
+   --- End of inner exception stack trace ---
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.SqlUtils.WithSqlExceptionHandling(Action operation)
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.SqlStoreConnection.OpenWithLock(Guid lockId)
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.StoreOperation.EstablishConnnections(Boolean undo)
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.StoreOperation.<Do>b__0()
+   at Microsoft.Azure.SqlDatabase.ElasticScale.TransientFaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.StoreOperation.Do()' operation on shard 'CreateShard'.
+See the inner StoreException for details."
+At C:\code\lesson06\sharding\shard-toystore.ps1:117 char:5
++     Add-Shard -ShardMap $ShardMap -SqlServerName $SQLServerFQDN -SqlD ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Add-Shard], MethodInvocationException
+    + FullyQualifiedErrorId : ShardManagementException,Add-Shard
+
+Add range keys to toystore_Shard_1 (Shard1)
+Adding schema mappings to the Shard Map Manager Database
+toystore is now Sharded.
+
+
+PS SQLSERVER:\> cd C:\code\lesson06\sharding
+PS C:\code\lesson06\sharding> .\shard-toystore.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore -AzureProfileFilePath C:\Code\MyAzureProfile.json
+Transcript started, output file is .\Log\Shard-toystore.txt
+WARNING: The output object type of this cmdlet will be modified in a future release.
+
+
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_SMM
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_SMM
+Location                      : East US 2
+DatabaseId                    : d91a9a90-4893-4fe8-a736-2922dbd1ffc7
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/24/2017 11:59:11 AM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/24/2017 12:30:20 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_SMM
+CreateMode                    :
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_Shard_2
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_Shard_2
+Location                      : East US 2
+DatabaseId                    : 2480f360-5607-4222-b46a-801b8764e5db
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/24/2017 12:00:54 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/24/2017 12:32:06 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_Shard_2
+CreateMode                    :
+
+Creating table 1_CreateSchemas.sql in toystore_Shard_2
+Invoke-Sqlcmd : A network-related or instance-specific error occurred while establishing a connection to SQL Server. 
+The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is 
+configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL 
+Server)
+At C:\code\lesson06\sharding\shard-toystore.ps1:98 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : A network-related or instance-specific error occurred while establishing a connection to SQL Server.
+The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is
+configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to
+SQL Server)
+At C:\code\lesson06\sharding\shard-toystore.ps1:98 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At C:\code\lesson06\sharding\shard-toystore.ps1:98 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At C:\code\lesson06\sharding\shard-toystore.ps1:98 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Creating table 2_Application.Countries.sql in toystore_Shard_2
+Invoke-Sqlcmd : The specified schema name "Application" either does not exist or you do not have permission to use it.
+At C:\code\lesson06\sharding\shard-toystore.ps1:98 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : The specified schema name "Application" either does not exist or you do not have permission to use it.
+At C:\code\lesson06\sharding\shard-toystore.ps1:98 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Creating table 3_Sales.Customer.sql in toystore_Shard_2
+Invoke-Sqlcmd : The specified schema name "Sales" either does not exist or you do not have permission to use it.
+At C:\code\lesson06\sharding\shard-toystore.ps1:98 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : The specified schema name "Sales" either does not exist or you do not have permission to use it.
+At C:\code\lesson06\sharding\shard-toystore.ps1:98 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Creating table 4_Sales.Orders.sql in toystore_Shard_2
+Invoke-Sqlcmd : The specified schema name "Sales" either does not exist or you do not have permission to use it.
+At C:\code\lesson06\sharding\shard-toystore.ps1:98 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : The specified schema name "Sales" either does not exist or you do not have permission to use it.
+At C:\code\lesson06\sharding\shard-toystore.ps1:98 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Configuring database toystore_SMM as Shard Map Manager
+Adding toystore_Shard_1 to the Shard Map toystorerangemap
+Adding toystore_Shard_2 to the Shard Map toystorerangemap
+Add range keys to toystore_Shard_1 (Shard1)
+Adding schema mappings to the Shard Map Manager Database
+toystore is now Sharded.
+
+
+**********************
+Windows PowerShell transcript end
+End time: 20171224174750
+**********************

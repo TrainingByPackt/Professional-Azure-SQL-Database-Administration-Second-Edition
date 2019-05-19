@@ -1,0 +1,5 @@
+# Remove an elastic pool
+.\Manage-ElasticPool.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ElasticPoolName toyfactorypool -Operation Remove -AzureProfileFilePath C:\Code\MyAzureProfile.json
+
+# Create an elastic pool
+.\Manage-ElasticPool.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ElasticPoolName toyfactorypool -ElasticPoolEdition Standard -eDTU 100 -MaxeDTU 100 -MineDTU 10 -AzureProfileFilePath C:\Code\MyAzureProfile.json -Operation Create -DatabasesToAdd "toystore_Shard_1_50,toystore_Shard_50_100,toystore_Shard_100_150,toystore_Shard_150_200"

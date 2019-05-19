@@ -1,0 +1,2039 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20171223202822
+Username: WIN2012R2\Administrator
+RunAs User: WIN2012R2\Administrator
+Machine: WIN2012R2 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 1380
+PSVersion: 5.0.10586.117
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0.10586.117
+BuildVersion: 10.0.10586.117
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\code\lesson06\Sharding\Log\Sharding.txt
+WARNING: The output object type of this cmdlet will be modified in a future release.
+
+
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_SMM
+Location                      : East US 2
+DatabaseId                    : 217df2f4-0e5d-4054-85f2-e599b136b990
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 2:47:57 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 3:19:12 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_SMM
+CreateMode                    :
+
+
+PS>TerminatingError(Set-AzureSqlDatabase): "Cannot validate argument on parameter 'Database'. The argument is null. Provide a valid value for the argument, and then try running the command again."
+Set-AzureSqlDatabase : Cannot validate argument on parameter 'Database'. The argument is null. Provide a valid value 
+for the argument, and then try running the command again.
+At C:\code\lesson06\Sharding\Sharding.ps1:77 char:69
++ ... ectionContext $SqlServerContext -Database $SqlDatabaseContext -NewDat ...
++                                               ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureSqlDatabase], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.WindowsAzure.Commands.SqlDatabase.Database.Cmdlet.SetAzureSqlDatabase
+Set-AzureSqlDatabase : Cannot validate argument on parameter 'Database'. The argument is null. Provide a valid value
+for the argument, and then try running the command again.
+At C:\code\lesson06\Sharding\Sharding.ps1:77 char:69
++ ... ectionContext $SqlServerContext -Database $SqlDatabaseContext -NewDat ...
++                                               ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureSqlDatabase], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.WindowsAzure.Commands.SqlDatabase.Database.Cm
+   dlet.SetAzureSqlDatabase
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_Shard_200
+Location                      : East US 2
+DatabaseId                    : 57bbb7bf-7a13-4a5d-9585-efdeeba607f4
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 2:49:43 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 3:20:54 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_Shard_200
+CreateMode                    :
+
+
+Import-Module : The specified module '..\Elastic DB tool scripts\ShardManagement\' was not loaded because no valid 
+module file was found in any module directory.
+At C:\code\lesson06\Sharding\Sharding.ps1:95 char:1
++ Import-Module "..\Elastic DB tool scripts\ShardManagement\"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (..\Elastic DB t...hardManagement\:String) [Import-Module], 
+FileNotFoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+Import-Module : The specified module '..\Elastic DB tool scripts\ShardManagement\' was not loaded because no valid
+module file was found in any module directory.
+At C:\code\lesson06\Sharding\Sharding.ps1:95 char:1
++ Import-Module "..\Elastic DB tool scripts\ShardManagement\"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (..\Elastic DB t...hardManagement\:String) [Import-Module], FileNot
+   FoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+
+Configuring database toystore_SMM as Shard Map Manager
+New-ShardMapManager : The term 'New-ShardMapManager' is not recognized as the name of a cmdlet, function, script file, 
+or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At C:\code\lesson06\Sharding\Sharding.ps1:99 char:20
++ $ShardMapManager = New-ShardMapManager -UserName $UserName -Password  ...
++                    ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-ShardMapManager:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+New-ShardMapManager : The term 'New-ShardMapManager' is not recognized as the name of a cmdlet, function, script file,
+or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and
+try again.
+At C:\code\lesson06\Sharding\Sharding.ps1:99 char:20
++ $ShardMapManager = New-ShardMapManager -UserName $UserName -Password  ...
++                    ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-ShardMapManager:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+New-RangeShardMap : The term 'New-RangeShardMap' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At C:\code\lesson06\Sharding\Sharding.ps1:105 char:13
++ $ShardMap = New-RangeShardMap -KeyType $([int]) -ShardMapManager $Sha ...
++             ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-RangeShardMap:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+New-RangeShardMap : The term 'New-RangeShardMap' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At C:\code\lesson06\Sharding\Sharding.ps1:105 char:13
++ $ShardMap = New-RangeShardMap -KeyType $([int]) -ShardMapManager $Sha ...
++             ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-RangeShardMap:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Adding toystore_Shard_1_100 and toystore_Shard_200 to the Shard Map toystorerangemap
+Add-Shard : The term 'Add-Shard' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\code\lesson06\Sharding\Sharding.ps1:112 char:5
++     Add-Shard -ShardMap $ShardMap -SqlServerName $SQLServerFQDN -SqlD ...
++     ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Add-Shard:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Add-Shard : The term 'Add-Shard' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\code\lesson06\Sharding\Sharding.ps1:112 char:5
++     Add-Shard -ShardMap $ShardMap -SqlServerName $SQLServerFQDN -SqlD ...
++     ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Add-Shard:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Add-Shard : The term 'Add-Shard' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\code\lesson06\Sharding\Sharding.ps1:112 char:5
++     Add-Shard -ShardMap $ShardMap -SqlServerName $SQLServerFQDN -SqlD ...
++     ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Add-Shard:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Add-Shard : The term 'Add-Shard' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\code\lesson06\Sharding\Sharding.ps1:112 char:5
++     Add-Shard -ShardMap $ShardMap -SqlServerName $SQLServerFQDN -SqlD ...
++     ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Add-Shard:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Add range keys to toystore_Shard_1_100 (Shard1)
+Add-RangeMapping : The term 'Add-RangeMapping' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At C:\code\lesson06\Sharding\Sharding.ps1:122 char:1
++ Add-RangeMapping -KeyType $([int]) -RangeShardMap $ShardMap -RangeLow ...
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Add-RangeMapping:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Add-RangeMapping : The term 'Add-RangeMapping' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At C:\code\lesson06\Sharding\Sharding.ps1:122 char:1
++ Add-RangeMapping -KeyType $([int]) -RangeShardMap $ShardMap -RangeLow ...
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Add-RangeMapping:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Adding schema mappings to the Shard Map Manager Database
+PS>TerminatingError(New-Object): "Cannot find type [Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema.SchemaInfo]: verify that the assembly containing this type is loaded."
+New-Object : Cannot find type [Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema.SchemaInfo]: verify that 
+the assembly containing this type is loaded.
+At C:\code\lesson06\Sharding\Sharding.ps1:131 char:15
++ ... chemaInfo = New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidType: (:) [New-Object], PSArgumentException
+    + FullyQualifiedErrorId : TypeNotFound,Microsoft.PowerShell.Commands.NewObjectCommand
+New-Object : Cannot find type [Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema.SchemaInfo]: verify
+that the assembly containing this type is loaded.
+At C:\code\lesson06\Sharding\Sharding.ps1:131 char:15
++ ... chemaInfo = New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidType: (:) [New-Object], PSArgumentException
+    + FullyQualifiedErrorId : TypeNotFound,Microsoft.PowerShell.Commands.NewObjectCommand
+
+>> TerminatingError(New-Object): "Cannot find type [Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema.ShardedTableInfo]: verify that the assembly containing this type is loaded."
+New-Object : Cannot find type [Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema.ShardedTableInfo]: 
+verify that the assembly containing this type is loaded.
+At C:\code\lesson06\Sharding\Sharding.ps1:133 char:19
++ ... aInfo.Add($(New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidType: (:) [New-Object], PSArgumentException
+    + FullyQualifiedErrorId : TypeNotFound,Microsoft.PowerShell.Commands.NewObjectCommand
+New-Object : Cannot find type [Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema.ShardedTableInfo]:
+verify that the assembly containing this type is loaded.
+At C:\code\lesson06\Sharding\Sharding.ps1:133 char:19
++ ... aInfo.Add($(New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidType: (:) [New-Object], PSArgumentException
+    + FullyQualifiedErrorId : TypeNotFound,Microsoft.PowerShell.Commands.NewObjectCommand
+
+You cannot call a method on a null-valued expression.
+At C:\code\lesson06\Sharding\Sharding.ps1:133 char:19
++ ... aInfo.Add($(New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+You cannot call a method on a null-valued expression.
+At C:\code\lesson06\Sharding\Sharding.ps1:133 char:19
++ ... aInfo.Add($(New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+>> TerminatingError(New-Object): "Cannot find type [Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema.ShardedTableInfo]: verify that the assembly containing this type is loaded."
+New-Object : Cannot find type [Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema.ShardedTableInfo]: 
+verify that the assembly containing this type is loaded.
+At C:\code\lesson06\Sharding\Sharding.ps1:134 char:19
++ ... aInfo.Add($(New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidType: (:) [New-Object], PSArgumentException
+    + FullyQualifiedErrorId : TypeNotFound,Microsoft.PowerShell.Commands.NewObjectCommand
+New-Object : Cannot find type [Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema.ShardedTableInfo]:
+verify that the assembly containing this type is loaded.
+At C:\code\lesson06\Sharding\Sharding.ps1:134 char:19
++ ... aInfo.Add($(New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidType: (:) [New-Object], PSArgumentException
+    + FullyQualifiedErrorId : TypeNotFound,Microsoft.PowerShell.Commands.NewObjectCommand
+
+You cannot call a method on a null-valued expression.
+At C:\code\lesson06\Sharding\Sharding.ps1:134 char:19
++ ... aInfo.Add($(New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+You cannot call a method on a null-valued expression.
+At C:\code\lesson06\Sharding\Sharding.ps1:134 char:19
++ ... aInfo.Add($(New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+>> TerminatingError(New-Object): "Cannot find type [Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema.ReferenceTableInfo]: verify that the assembly containing this type is loaded."
+New-Object : Cannot find type [Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema.ReferenceTableInfo]: 
+verify that the assembly containing this type is loaded.
+At C:\code\lesson06\Sharding\Sharding.ps1:136 char:19
++ ... aInfo.Add($(New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidType: (:) [New-Object], PSArgumentException
+    + FullyQualifiedErrorId : TypeNotFound,Microsoft.PowerShell.Commands.NewObjectCommand
+New-Object : Cannot find type [Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema.ReferenceTableInfo]:
+verify that the assembly containing this type is loaded.
+At C:\code\lesson06\Sharding\Sharding.ps1:136 char:19
++ ... aInfo.Add($(New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidType: (:) [New-Object], PSArgumentException
+    + FullyQualifiedErrorId : TypeNotFound,Microsoft.PowerShell.Commands.NewObjectCommand
+
+You cannot call a method on a null-valued expression.
+At C:\code\lesson06\Sharding\Sharding.ps1:136 char:19
++ ... aInfo.Add($(New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+You cannot call a method on a null-valued expression.
+At C:\code\lesson06\Sharding\Sharding.ps1:136 char:19
++ ... aInfo.Add($(New-Object Microsoft.Azure.SqlDatabase.ElasticScale.Shard ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+You cannot call a method on a null-valued expression.
+At C:\code\lesson06\Sharding\Sharding.ps1:138 char:1
++ $SchemaInfoCollection = $ShardMapManager.GetSchemaInfoCollection()
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+You cannot call a method on a null-valued expression.
+At C:\code\lesson06\Sharding\Sharding.ps1:138 char:1
++ $SchemaInfoCollection = $ShardMapManager.GetSchemaInfoCollection()
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+You cannot call a method on a null-valued expression.
+At C:\code\lesson06\Sharding\Sharding.ps1:143 char:2
++     $SchemaInfoCollection.Add($ShardMapName, $SchemaInfo)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+You cannot call a method on a null-valued expression.
+At C:\code\lesson06\Sharding\Sharding.ps1:143 char:2
++     $SchemaInfoCollection.Add($ShardMapName, $SchemaInfo)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+toystore is now Sharded.
+
+
+PS SQLSERVER:\> c:
+**********************
+Windows PowerShell transcript end
+End time: 20171223202938
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20171223203104
+Username: WIN2012R2\Administrator
+RunAs User: WIN2012R2\Administrator
+Machine: WIN2012R2 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7804
+PSVersion: 5.0.10586.117
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0.10586.117
+BuildVersion: 10.0.10586.117
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\code\lesson06\Sharding\Log\Sharding.txt
+Import-Module : The specified module '..\Elastic DB tool scripts\ShardManagement\' was not loaded because no valid 
+module file was found in any module directory.
+At C:\code\lesson06\Sharding\Sharding.ps1:52 char:1
++ Import-Module "..\Elastic DB tool scripts\ShardManagement\"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (..\Elastic DB t...hardManagement\:String) [Import-Module], 
+FileNotFoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+Import-Module : The specified module '..\Elastic DB tool scripts\ShardManagement\' was not loaded because no valid
+module file was found in any module directory.
+At C:\code\lesson06\Sharding\Sharding.ps1:52 char:1
++ Import-Module "..\Elastic DB tool scripts\ShardManagement\"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (..\Elastic DB t...hardManagement\:String) [Import-Module], FileNot
+   FoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+
+
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_SMM
+Location                      : East US 2
+DatabaseId                    : 217df2f4-0e5d-4054-85f2-e599b136b990
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 2:47:57 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 3:19:12 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_SMM
+CreateMode                    :
+
+
+PS>TerminatingError(Set-AzureSqlDatabase): "Cannot validate argument on parameter 'Database'. The argument is null. Provide a valid value for the argument, and then try running the command again."
+Set-AzureSqlDatabase : Cannot validate argument on parameter 'Database'. The argument is null. Provide a valid value 
+for the argument, and then try running the command again.
+At C:\code\lesson06\Sharding\Sharding.ps1:80 char:69
++ ... ectionContext $SqlServerContext -Database $SqlDatabaseContext -NewDat ...
++                                               ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureSqlDatabase], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.WindowsAzure.Commands.SqlDatabase.Database.Cmdlet.SetAzureSqlDatabase
+Set-AzureSqlDatabase : Cannot validate argument on parameter 'Database'. The argument is null. Provide a valid value
+for the argument, and then try running the command again.
+At C:\code\lesson06\Sharding\Sharding.ps1:80 char:69
++ ... ectionContext $SqlServerContext -Database $SqlDatabaseContext -NewDat ...
++                                               ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureSqlDatabase], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.WindowsAzure.Commands.SqlDatabase.Database.Cm
+   dlet.SetAzureSqlDatabase
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\code\lesson06\Sharding> cls
+PS C:\code\lesson06\Sharding> Import-Module '..\Elastic DB tool scripts\ShardManagement'
+PS C:\code\lesson06\Sharding> remove-module ShardManagement
+PS C:\code\lesson06\Sharding> .\Sharding.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is C:\code\lesson06\Sharding\Log\Sharding.txt
+Import-Module : The specified module '..\Elastic DB tool scripts\ShardManagement\' was not loaded because no valid 
+module file was found in any module directory.
+At C:\code\lesson06\Sharding\Sharding.ps1:52 char:1
++ Import-Module '..\Elastic DB tool scripts\ShardManagement\'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (..\Elastic DB t...hardManagement\:String) [Import-Module], 
+FileNotFoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+Import-Module : The specified module '..\Elastic DB tool scripts\ShardManagement\' was not loaded because no valid
+module file was found in any module directory.
+At C:\code\lesson06\Sharding\Sharding.ps1:52 char:1
++ Import-Module '..\Elastic DB tool scripts\ShardManagement\'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (..\Elastic DB t...hardManagement\:String) [Import-Module], FileNot
+   FoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+
+
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+PS C:\code\lesson06\Sharding> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\code\lesson06\Sharding> .\Sharding.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is C:\code\lesson06\Sharding\Log\Sharding.txt
+Import-Module : The specified module '..\Elastic DB tool scripts\ShardManagement\' was not loaded because no valid 
+module file was found in any module directory.
+At C:\code\lesson06\Sharding\Sharding.ps1:52 char:1
++ Import-Module '..\Elastic DB tool scripts\ShardManagement\'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (..\Elastic DB t...hardManagement\:String) [Import-Module], 
+FileNotFoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+Import-Module : The specified module '..\Elastic DB tool scripts\ShardManagement\' was not loaded because no valid
+module file was found in any module directory.
+At C:\code\lesson06\Sharding\Sharding.ps1:52 char:1
++ Import-Module '..\Elastic DB tool scripts\ShardManagement\'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (..\Elastic DB t...hardManagement\:String) [Import-Module], FileNot
+   FoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+
+C:\code\lesson06\Sharding
+PS C:\code\lesson06\Sharding> .\Sharding.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is C:\code\lesson06\Sharding\Log\Sharding.txt
+Import-Module : The specified module 'C:\code\lesson06\Elastic DB tool scripts\ShardManagement\' was not loaded because 
+no valid module file was found in any module directory.
+At C:\code\lesson06\Sharding\Sharding.ps1:52 char:1
++ Import-Module 'C:\code\lesson06\Elastic DB tool scripts\ShardManageme ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (C:\code\lesson0...hardManagement\:String) [Import-Module], 
+FileNotFoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+Import-Module : The specified module 'C:\code\lesson06\Elastic DB tool scripts\ShardManagement\' was not loaded
+because no valid module file was found in any module directory.
+At C:\code\lesson06\Sharding\Sharding.ps1:52 char:1
++ Import-Module 'C:\code\lesson06\Elastic DB tool scripts\ShardManageme ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (C:\code\lesson0...hardManagement\:String) [Import-Module], FileNot
+   FoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+
+C:\code\lesson06\Sharding
+PS C:\code\lesson06\Sharding> import-module 'C:\code\lesson06\Elastic DB tool scripts\ShardManagement\'
+import-module : The specified module 'C:\code\lesson06\Elastic DB tool scripts\ShardManagement\' was not loaded because 
+no valid module file was found in any module directory.
+At line:1 char:1
++ import-module 'C:\code\lesson06\Elastic DB tool scripts\ShardManageme ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (C:\code\lesson0...hardManagement\:String) [Import-Module], 
+FileNotFoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+import-module : The specified module 'C:\code\lesson06\Elastic DB tool scripts\ShardManagement\' was not loaded
+because no valid module file was found in any module directory.
+At line:1 char:1
++ import-module 'C:\code\lesson06\Elastic DB tool scripts\ShardManageme ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (C:\code\lesson0...hardManagement\:String) [Import-Module], FileNot
+   FoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+
+PS C:\code\lesson06\Sharding> import-module 'C:\code\lesson06\Elastic DB tool scripts\ShardManagement\ShardManagement.psm1'
+PS C:\code\lesson06\Sharding> remove-module ShardManagement
+PS C:\code\lesson06\Sharding> .\Sharding.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is C:\code\lesson06\Sharding\Log\Sharding.txt
+C:\code\lesson06\Sharding
+PS C:\code\lesson06\Sharding> clear
+PS C:\code\lesson06\Sharding> .\Sharding.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is C:\code\lesson06\Sharding\Log\Sharding.txt
+WARNING: The output object type of this cmdlet will be modified in a future release.
+
+
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_SMM
+Location                      : East US 2
+DatabaseId                    : 217df2f4-0e5d-4054-85f2-e599b136b990
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 2:47:57 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 3:19:12 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_SMM
+CreateMode                    :
+
+
+PS C:\code\lesson06\Sharding> TerminatingError(Set-AzureSqlDatabase): "Cannot validate argument on parameter 'Database'. The argument is null. Provide a valid value for the argument, and then try running the command again."
+Set-AzureSqlDatabase : Cannot validate argument on parameter 'Database'. The argument is null. Provide a valid value 
+for the argument, and then try running the command again.
+At C:\code\lesson06\Sharding\Sharding.ps1:81 char:69
++ ... ectionContext $SqlServerContext -Database $SqlDatabaseContext -NewDat ...
++                                               ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureSqlDatabase], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationError,Microsoft.WindowsAzure.Commands.SqlDatabase.Database.Cmdlet.SetAzureSqlDatabase
+Set-AzureSqlDatabase : Cannot validate argument on parameter 'Database'. The argument is null. Provide a valid value
+for the argument, and then try running the command again.
+At C:\code\lesson06\Sharding\Sharding.ps1:81 char:69
++ ... ectionContext $SqlServerContext -Database $SqlDatabaseContext -NewDat ...
++                                               ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureSqlDatabase], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.WindowsAzure.Commands.SqlDatabase.Database.Cm
+   dlet.SetAzureSqlDatabase
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_Shard_200
+Location                      : East US 2
+DatabaseId                    : 57bbb7bf-7a13-4a5d-9585-efdeeba607f4
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 2:49:43 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 3:20:54 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_Shard_200
+CreateMode                    :
+
+
+Creating table 1_CreateSchemas.sql.FullName in toystore_Shard_200
+Creating table 2_Application.Countries.sql.FullName in toystore_Shard_200
+Creating table 3_Sales.Customer.sql.FullName in toystore_Shard_200
+Creating table 4_Sales.Orders.sql.FullName in toystore_Shard_200
+Configuring database toystore_SMM as Shard Map Manager
+Adding toystore_Shard_1_100 and toystore_Shard_200 to the Shard Map toystorerangemap
+Add range keys to toystore_Shard_1_100 (Shard1)
+Adding schema mappings to the Shard Map Manager Database
+toystore is now Sharded.
+
+
+PS SQLSERVER:\> C:
+PS C:\code\lesson06\Sharding> cd ..
+PS C:\code\lesson06> cd .\Splitting
+PS C:\code\lesson06\Splitting> .\SplitToyStoreShard.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SplitMergeDatabase toystore_splitmerge -SplitMergeServiceEndpoint "https://splitmerge.cloudapp.net/" -ShardMapManagerDatabaseName toystore_SMM -Shard2 toystore_Shard_200 -ShardMapName toystorerangemap -SplitRangeLow 1 -SplitRangeHigh 200 -SplitValue 100
+Transcript started, output file is C:\code\lesson06\Splitting\Log\SplitToyStoreShard.txt
+WARNING: The output object type of this cmdlet will be modified in a future release.
+
+
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_splitmerge
+Location                      : East US 2
+DatabaseId                    : a17e42bf-809c-4a2e-b732-9e58d192f195
+Edition                       : Basic
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 2147483648
+Status                        : Online
+CreationDate                  : 12/23/2017 10:31:36 AM
+CurrentServiceObjectiveId     : dd6d99bb-f193-4ec1-86f2-43d3bccbc49c
+CurrentServiceObjectiveName   : Basic
+RequestedServiceObjectiveId   : dd6d99bb-f193-4ec1-86f2-43d3bccbc49c
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 11:02:51 AM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_splitmerge
+CreateMode                    :
+
+
+Sending split request
+Polling request status. Press Ctrl-C to end
+Progress: 0% | Status: Queued | Details: [Informational] Operation has been queued.
+Progress: 5% | Status: Starting | Details: [Informational] Starting Split-Merge state machine for request.
+Progress: 5% | Status: Starting | Details: [Informational] Performing data consistency checks on target shards.
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Moving key range [100:200) of sharded tables.
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [100:200) for sharded table [Sales].[Customers].
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [100:200) for sharded table [Sales].[Orders].
+Progress: 90% | Status: Completing | Details: [Informational] Successfully deleted moved shardlets in table [Sales].[Orders].
+Progress: 100% | Status: Succeeded | Details: [Informational] Successfully processed request.
+
+
+PS C:\code\lesson06\Splitting> clear
+PS C:\code\lesson06\Splitting> cd ..
+PS C:\code\lesson06> cd .\Sharding
+PS C:\code\lesson06\Sharding> .\Sharding.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is C:\code\lesson06\Sharding\Log\Sharding.txt
+WARNING: The output object type of this cmdlet will be modified in a future release.
+
+
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_SMM
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_SMM
+Location                      : East US 2
+DatabaseId                    : a74cbab1-3aa3-4f19-a978-3a8e17c6ace9
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 3:41:59 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 4:13:12 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_SMM
+CreateMode                    :
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_Shard_200
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_Shard_200
+Location                      : East US 2
+DatabaseId                    : d0201f5f-7218-41fd-ae93-5eaaff1ca4e3
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 3:43:42 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 4:14:43 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_Shard_200
+CreateMode                    :
+
+Creating table 1_CreateSchemas.sql.FullName in toystore_Shard_200
+Creating table 2_Application.Countries.sql.FullName in toystore_Shard_200
+Creating table 3_Sales.Customer.sql.FullName in toystore_Shard_200
+Creating table 4_Sales.Orders.sql.FullName in toystore_Shard_200
+Configuring database toystore_SMM as Shard Map Manager
+Adding toystore_Shard_1_100 and toystore_Shard_200 to the Shard Map toystorerangemap
+Add range keys to toystore_Shard_1_100 (Shard1)
+Adding schema mappings to the Shard Map Manager Database
+toystore is now Sharded.
+
+
+PS C:\code\lesson06\Sharding> cd ..
+PS C:\code\lesson06> cd .\Splitting
+PS C:\code\lesson06\Splitting> clear
+PS C:\code\lesson06\Splitting> .\SplitToyStoreShard.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SplitMergeDatabase toystore_splitmerge -SplitMergeServiceEndpoint "https://splitmerge.cloudapp.net/" -ShardMapManagerDatabaseName toystore_SMM -Shard2 toystore_Shard_200 -ShardMapName toystorerangemap -SplitRangeLow 0 -SplitRangeHigh 200 -SplitValue 100
+PS C:\code\lesson06\Splitting> TerminatingError(Start-Transcript): "Transcription cannot be started."
+Start-Transcript : Transcription cannot be started.
+At C:\code\lesson06\Splitting\SplitToyStoreShard.ps1:55 char:1
++ Start-Transcript -Path "$ScriptPath\Log\SplitToyStoreShard.txt"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Start-Transcript], PSInvalidOperationException
+    + FullyQualifiedErrorId : CannotStartTranscription,Microsoft.PowerShell.Commands.StartTranscriptCommand
+Start-Transcript : Transcription cannot be started.
+At C:\code\lesson06\Splitting\SplitToyStoreShard.ps1:55 char:1
++ Start-Transcript -Path "$ScriptPath\Log\SplitToyStoreShard.txt"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Start-Transcript], PSInvalidOperationException
+    + FullyQualifiedErrorId : CannotStartTranscription,Microsoft.PowerShell.Commands.StartTranscriptCommand
+
+Sending split request
+Polling request status. Press Ctrl-C to end
+Progress: 0% | Status: Queued | Details: [Informational] Operation has been queued.
+Progress: 5% | Status: Starting | Details: [Informational] Starting Split-Merge state machine for request.
+Progress: 5% | Status: Starting | Details: [Informational] Performing data consistency checks on target shards.
+Progress: 20% | Status: CopyingReferenceTables | Details: [Informational] Successfully copied reference table [Application].[Countries].
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Moving key range [100:200) of sharded tables.
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [100:200) for sharded table [Sales].[Customers].
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [100:200) for sharded table [Sales].[Orders].
+Progress: 90% | Status: Completing | Details: [Informational] Successfully deleted moved shardlets in table [Sales].[Orders].
+Progress: 90% | Status: Completing | Details: [Informational] Deleting any temp tables that were created while processing the request.
+Progress: 100% | Status: Succeeded | Details: [Informational] Successfully processed request.
+PS C:\code\lesson06\Splitting> clear
+PS C:\code\lesson06\Splitting> cd ..\Sharding
+PS C:\code\lesson06\Sharding> .\Sharding.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is C:\code\lesson06\Sharding\Log\Sharding.txt
+WARNING: The output object type of this cmdlet will be modified in a future release.
+
+
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_SMM
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_SMM
+Location                      : East US 2
+DatabaseId                    : f97f1112-136d-4c18-a98d-7640ecd5884f
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 3:59:56 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 4:30:46 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_SMM
+CreateMode                    :
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_Shard_200
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_Shard_200
+Location                      : East US 2
+DatabaseId                    : 55442592-0e54-4557-ae26-f446807e1b3b
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 4:01:23 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 4:32:38 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_Shard_200
+CreateMode                    :
+
+Creating table 1_CreateSchemas.sql.FullName in toystore_Shard_200
+Creating table 2_Application.Countries.sql.FullName in toystore_Shard_200
+Creating table 3_Sales.Customer.sql.FullName in toystore_Shard_200
+Creating table 4_Sales.Orders.sql.FullName in toystore_Shard_200
+Configuring database toystore_SMM as Shard Map Manager
+Adding toystore_Shard_1_100 and toystore_Shard_200 to the Shard Map toystorerangemap
+Add range keys to toystore_Shard_1_100 (Shard1)
+Adding schema mappings to the Shard Map Manager Database
+toystore is now Sharded.
+
+
+PS C:\code\lesson06\Sharding> cd ..\Splitting
+PS C:\code\lesson06\Splitting> .\SplitToyStoreShard.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SplitMergeDatabase toystore_splitmerge -SplitMergeServiceEndpoint "https://splitmerge.cloudapp.net/" -ShardMapManagerDatabaseName toystore_SMM -Shard2 toystore_Shard_200 -ShardMapName toystorerangemap -SplitRangeLow 0 -SplitRangeHigh 200 -SplitValue 100
+Transcript started, output file is \Log\SplitToyStoreShard.txt
+Sending split request
+Polling request status. Press Ctrl-C to end
+Progress: 0% | Status: Queued | Details: [Informational] Operation has been queued.
+Progress: 5% | Status: Starting | Details: [Informational] Starting Split-Merge state machine for request.
+Progress: 5% | Status: Starting | Details: [Informational] Performing data consistency checks on target shards.
+Progress: 44% | Status: CopyingShardedTables | Details: [Informational] Moving key range [100:110) of sharded tables.
+Progress: 44% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [100:110) for sharded table [Sales].[Customers].
+Progress: 44% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [100:110) for sharded table [Sales].[Orders].
+Progress: 48% | Status: CopyingShardedTables | Details: [Informational] Moving key range [110:120) of sharded tables.
+Progress: 48% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [110:120) for sharded table [Sales].[Customers].
+Progress: 52% | Status: CopyingShardedTables | Details: [Informational] Moving key range [120:130) of sharded tables.
+Progress: 52% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [120:130) for sharded table [Sales].[Orders].
+Progress: 56% | Status: CopyingShardedTables | Details: [Informational] Moving key range [130:140) of sharded tables.
+Progress: 56% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [130:140) for sharded table [Sales].[Customers].
+Progress: 56% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [130:140) for sharded table [Sales].[Orders].
+Progress: 60% | Status: CopyingShardedTables | Details: [Informational] Moving key range [140:150) of sharded tables.
+Progress: 60% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [140:150) for sharded table [Sales].[Customers].
+Progress: 64% | Status: CopyingShardedTables | Details: [Informational] Moving key range [150:160) of sharded tables.
+Progress: 64% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [150:160) for sharded table [Sales].[Customers].
+Progress: 68% | Status: CopyingShardedTables | Details: [Informational] Moving key range [160:170) of sharded tables.
+Progress: 68% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [160:170) for sharded table [Sales].[Customers].
+Progress: 72% | Status: CopyingShardedTables | Details: [Informational] Moving key range [170:180) of sharded tables.
+Progress: 72% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [170:180) for sharded table [Sales].[Customers].
+Progress: 76% | Status: CopyingShardedTables | Details: [Informational] Moving key range [180:190) of sharded tables.
+Progress: 76% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [180:190) for sharded table [Sales].[Customers].
+Progress: 76% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [180:190) for sharded table [Sales].[Orders].
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Moving key range [190:200) of sharded tables.
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [190:200) for sharded table [Sales].[Customers].
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [190:200) for sharded table [Sales].[Orders].
+Progress: 90% | Status: Completing | Details: [Informational] Successfully deleted moved shardlets in table [Sales].[Orders].
+Progress: 100% | Status: Succeeded | Details: [Informational] Successfully processed request.
+PS C:\code\lesson06\Splitting> clear
+PS C:\code\lesson06\Splitting> cd ..\Sharding
+PS C:\code\lesson06\Sharding> .\Sharding.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is C:\code\lesson06\Sharding\Log\Sharding.txt
+WARNING: The output object type of this cmdlet will be modified in a future release.
+
+
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_SMM
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_SMM
+Location                      : East US 2
+DatabaseId                    : 69007bc8-ecf8-4e6a-bf4a-b7d43819d275
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 4:12:25 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 4:43:27 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_SMM
+CreateMode                    :
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_Shard_200
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_Shard_200
+Location                      : East US 2
+DatabaseId                    : c8708d01-588c-423d-bd24-d6b5728778c2
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 4:14:07 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 4:45:31 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_Shard_200
+CreateMode                    :
+
+Creating table 1_CreateSchemas.sql.FullName in toystore_Shard_200
+Invoke-Sqlcmd : A network-related or instance-specific error occurred while establishing a connection to SQL Server. 
+The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is 
+configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL 
+Server)
+At C:\code\lesson06\Sharding\Sharding.ps1:94 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : A network-related or instance-specific error occurred while establishing a connection to SQL Server.
+The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is
+configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to
+SQL Server)
+At C:\code\lesson06\Sharding\Sharding.ps1:94 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At C:\code\lesson06\Sharding\Sharding.ps1:94 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At C:\code\lesson06\Sharding\Sharding.ps1:94 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Creating table 2_Application.Countries.sql.FullName in toystore_Shard_200
+Invoke-Sqlcmd : The specified schema name "Application" either does not exist or you do not have permission to use it.
+At C:\code\lesson06\Sharding\Sharding.ps1:94 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : The specified schema name "Application" either does not exist or you do not have permission to use it.
+At C:\code\lesson06\Sharding\Sharding.ps1:94 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Creating table 3_Sales.Customer.sql.FullName in toystore_Shard_200
+Invoke-Sqlcmd : The specified schema name "Sales" either does not exist or you do not have permission to use it.
+At C:\code\lesson06\Sharding\Sharding.ps1:94 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : The specified schema name "Sales" either does not exist or you do not have permission to use it.
+At C:\code\lesson06\Sharding\Sharding.ps1:94 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Creating table 4_Sales.Orders.sql.FullName in toystore_Shard_200
+Invoke-Sqlcmd : The specified schema name "Sales" either does not exist or you do not have permission to use it.
+At C:\code\lesson06\Sharding\Sharding.ps1:94 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : The specified schema name "Sales" either does not exist or you do not have permission to use it.
+At C:\code\lesson06\Sharding\Sharding.ps1:94 char:5
++     Invoke-Sqlcmd -ServerInstance $SQLServerFQDN -Username $UserName  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Configuring database toystore_SMM as Shard Map Manager
+Adding toystore_Shard_1_100 and toystore_Shard_200 to the Shard Map toystorerangemap
+Add range keys to toystore_Shard_1_100 (Shard1)
+Adding schema mappings to the Shard Map Manager Database
+toystore is now Sharded.
+
+
+PS C:\code\lesson06\Sharding> cd ..\Splitting
+PS C:\code\lesson06\Splitting> .\SplitToyStoreShard.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SplitMergeDatabase toystore_splitmerge -SplitMergeServiceEndpoint "https://splitmerge.cloudapp.net/" -ShardMapManagerDatabaseName toystore_SMM -Shard2 toystore_Shard_200 -ShardMapName toystorerangemap -SplitRangeLow 0 -SplitRangeHigh 200 -SplitValue 100
+PS C:\code\lesson06\Splitting> TerminatingError(Start-Transcript): "Transcription cannot be started."
+Start-Transcript : Transcription cannot be started.
+At C:\code\lesson06\Splitting\SplitToyStoreShard.ps1:34 char:1
++ Start-Transcript -Path "$ScriptPath\Log\SplitToyStoreShard.txt"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Start-Transcript], PSInvalidOperationException
+    + FullyQualifiedErrorId : CannotStartTranscription,Microsoft.PowerShell.Commands.StartTranscriptCommand
+Start-Transcript : Transcription cannot be started.
+At C:\code\lesson06\Splitting\SplitToyStoreShard.ps1:34 char:1
++ Start-Transcript -Path "$ScriptPath\Log\SplitToyStoreShard.txt"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Start-Transcript], PSInvalidOperationException
+    + FullyQualifiedErrorId : CannotStartTranscription,Microsoft.PowerShell.Commands.StartTranscriptCommand
+
+Sending split request
+Polling request status. Press Ctrl-C to end
+Progress: 0% | Status: Queued | Details: [Informational] Operation has been queued.
+Progress: 5% | Status: Starting | Details: [Informational] Starting Split-Merge state machine for request.
+Progress: 5% | Status: Starting | Details: [Informational] Performing data consistency checks on target shards.
+Progress: 20% | Status: CopyingReferenceTables | Details: [Informational] Successfully copied reference table [Application].[Countries].
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Moving key range [100:200) of sharded tables.
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [100:200) for sharded table [Sales].[Customers].
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [100:200) for sharded table [Sales].[Orders].
+Progress: 90% | Status: Completing | Details: [Informational] Successfully deleted moved shardlets in table [Sales].[Orders].
+Progress: 100% | Status: Succeeded | Details: [Informational] Successfully processed request.
+PS C:\code\lesson06\Splitting> clear
+PS C:\code\lesson06\Splitting> cd ..\Sharding
+PS C:\code\lesson06\Sharding> .\Sharding.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is C:\code\lesson06\Sharding\Log\Sharding.txt
+WARNING: The output object type of this cmdlet will be modified in a future release.
+
+
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_SMM
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_SMM
+Location                      : East US 2
+DatabaseId                    : 11a88b57-544e-43dc-a42b-03ecf191a9f6
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 4:28:50 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 5:00:13 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_SMM
+CreateMode                    :
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_Shard_200
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_Shard_200
+Location                      : East US 2
+DatabaseId                    : 94d6b8e8-45b7-4bd9-9ce2-50da3db6e822
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 4:30:47 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 5:01:58 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/M
+                                icrosoft.Sql/servers/toyfactory/databases/toystore_Shard_200
+CreateMode                    :
+
+Creating table 1_CreateSchemas.sql in toystore_Shard_200
+Creating table 2_Application.Countries.sql in toystore_Shard_200
+Creating table 3_Sales.Customer.sql in toystore_Shard_200
+Creating table 4_Sales.Orders.sql in toystore_Shard_200
+Configuring database toystore_SMM as Shard Map Manager
+Adding toystore_Shard_1_100 and toystore_Shard_200 to the Shard Map toystorerangemap
+Add range keys to toystore_Shard_1_100 (Shard1)
+Adding schema mappings to the Shard Map Manager Database
+toystore is now Sharded.
+
+
+PS C:\code\lesson06\Sharding> cd ..\Splitting
+PS C:\code\lesson06\Splitting> .\SplitToyStoreShard.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SplitMergeDatabase toystore_splitmerge -SplitMergeServiceEndpoint "https://splitmerge.cloudapp.net/" -ShardMapManagerDatabaseName toystore_SMM -Shard2 toystore_Shard_200 -ShardMapName toystorerangemap -SplitRangeLow 0 -SplitRangeHigh 200 -SplitValue 100
+PS C:\code\lesson06\Splitting> TerminatingError(Start-Transcript): "Transcription cannot be started."
+Start-Transcript : Transcription cannot be started.
+At C:\code\lesson06\Splitting\SplitToyStoreShard.ps1:34 char:1
++ Start-Transcript -Path "$ScriptPath\Log\SplitToyStoreShard.txt"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Start-Transcript], PSInvalidOperationException
+    + FullyQualifiedErrorId : CannotStartTranscription,Microsoft.PowerShell.Commands.StartTranscriptCommand
+Start-Transcript : Transcription cannot be started.
+At C:\code\lesson06\Splitting\SplitToyStoreShard.ps1:34 char:1
++ Start-Transcript -Path "$ScriptPath\Log\SplitToyStoreShard.txt"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Start-Transcript], PSInvalidOperationException
+    + FullyQualifiedErrorId : CannotStartTranscription,Microsoft.PowerShell.Commands.StartTranscriptCommand
+
+Sending split request
+Polling request status. Press Ctrl-C to end
+Progress: 0% | Status: Queued | Details: [Informational] Operation has been queued.
+Progress: 5% | Status: Starting | Details: [Informational] Starting Split-Merge state machine for request.
+Progress: 5% | Status: Starting | Details: [Informational] Performing data consistency checks on target shards.
+Progress: 20% | Status: CopyingReferenceTables | Details: [Informational] Successfully copied reference table [Application].[Countries].
+Progress: 44% | Status: CopyingShardedTables | Details: [Informational] Moving key range [100:110) of sharded tables.
+Progress: 44% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [100:110) for sharded table [Sales].[Customers].
+Progress: 44% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [100:110) for sharded table [Sales].[Orders].
+Progress: 48% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [110:120) for sharded table [Sales].[Customers].
+Progress: 48% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [110:120) for sharded table [Sales].[Orders].
+Progress: 52% | Status: CopyingShardedTables | Details: [Informational] Moving key range [120:130) of sharded tables.
+Progress: 52% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [120:130) for sharded table [Sales].[Customers].
+Progress: 56% | Status: CopyingShardedTables | Details: [Informational] Moving key range [130:140) of sharded tables.
+Progress: 56% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [130:140) for sharded table [Sales].[Customers].
+Progress: 60% | Status: CopyingShardedTables | Details: [Informational] Moving key range [140:150) of sharded tables.
+Progress: 60% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [140:150) for sharded table [Sales].[Customers].
+Progress: 64% | Status: CopyingShardedTables | Details: [Informational] Moving key range [150:160) of sharded tables.
+Progress: 64% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [150:160) for sharded table [Sales].[Customers].
+Progress: 68% | Status: CopyingShardedTables | Details: [Informational] Moving key range [160:170) of sharded tables.
+Progress: 68% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [160:170) for sharded table [Sales].[Customers].
+Progress: 72% | Status: CopyingShardedTables | Details: [Informational] Moving key range [170:180) of sharded tables.
+Progress: 72% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [170:180) for sharded table [Sales].[Customers].
+Progress: 76% | Status: CopyingShardedTables | Details: [Informational] Moving key range [180:190) of sharded tables.
+Progress: 76% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [180:190) for sharded table [Sales].[Customers].
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Moving key range [190:200) of sharded tables.
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [190:200) for sharded table [Sales].[Customers].
+Progress: 80% | Status: CopyingShardedTables | Details: [Informational] Successfully copied key range [190:200) for sharded table [Sales].[Orders].
+Progress: 90% | Status: Completing | Details: [Informational] Deleting any temp tables that were created while processing the request.
+Progress: 100% | Status: Succeeded | Details: [Informational] Successfully processed request.
+**********************
+Windows PowerShell transcript start
+Start time: 20171224162102
+Username: WIN2012R2\Administrator
+RunAs User: WIN2012R2\Administrator
+Machine: WIN2012R2 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\system32\WindowsPowerShell\v1.0\PowerShell.exe
+Process ID: 10100
+PSVersion: 5.0.10586.117
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0.10586.117
+BuildVersion: 10.0.10586.117
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\Log\Sharding.txt
+File Not Found \MyAzureProfile.json
+Login-AzureRmAccount : authentication_canceled: User canceled authentication
+At C:\Code\Lesson06\Sharding\shard-toystore.ps1:44 char:16
++     $profile = Login-AzureRmAccount
++                ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Add-AzureRmAccount], AadAuthenticationCanceledException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.AddAzureRMAccountCommand
+Login-AzureRmAccount : authentication_canceled: User canceled authentication
+At C:\Code\Lesson06\Sharding\shard-toystore.ps1:44 char:16
++     $profile = Login-AzureRmAccount
++                ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Add-AzureRmAccount], AadAuthenticationCanceledException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.AddAzureRMAccountCommand
+
+PS>TerminatingError(Set-AzureRmContext): "Cannot validate argument on parameter 'SubscriptionId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+Set-AzureRmContext : Cannot validate argument on parameter 'SubscriptionId'. The argument is null or empty. Provide an 
+argument that is not null or empty, and then try the command again.
+At C:\Code\Lesson06\Sharding\shard-toystore.ps1:49 char:36
++ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
++                                    ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureRmContext], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Code\Lesson06\Sharding> clear
+PS C:\Code\Lesson06\Sharding> .\shard-toystore.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is .\Log\Sharding.txt
+PS C:\Code\Lesson06\Sharding> TerminatingError(Set-AzureRmContext): "Cannot validate argument on parameter 'SubscriptionId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+Set-AzureRmContext : Cannot validate argument on parameter 'SubscriptionId'. The argument is null or empty. Provide an 
+argument that is not null or empty, and then try the command again.
+At C:\Code\Lesson06\Sharding\shard-toystore.ps1:49 char:36
++ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
++                                    ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureRmContext], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+Set-AzureRmContext : Cannot validate argument on parameter 'SubscriptionId'. The argument is null or empty. Provide an
+argument that is not null or empty, and then try the command again.
+At C:\Code\Lesson06\Sharding\shard-toystore.ps1:49 char:36
++ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
++                                    ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureRmContext], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Profile.SetAzureRMContextComma
+   nd
+
+PS C:\Code\Lesson06\Sharding> TerminatingError(Get-AzureRmResourceGroup): "Run Login-AzureRmAccount to login."
+Get-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:29 char:1
++ Get-AzureRmResourceGroup -Name $ResourceGroup -Location $Location -Er ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmResourceGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.GetAzureResourceGroupCommand
+Get-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:29 char:1
++ Get-AzureRmResourceGroup -Name $ResourceGroup -Location $Location -Er ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmResourceGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.GetAzureResourceGroupCommand
+
+Provisioning Azure Resource Group toystore
+PS C:\Code\Lesson06\Sharding> TerminatingError(New-AzureRmResourceGroup): "Run Login-AzureRmAccount to login."
+New-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:40 char:1
++ New-AzureRmResourceGroup @_ResourceGroup;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmResourceGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.NewAzureResourceGroupCommand
+New-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:40 char:1
++ New-AzureRmResourceGroup @_ResourceGroup;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmResourceGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.NewAzureResourceGroupCommand
+
+PS C:\Code\Lesson06\Sharding> TerminatingError(Get-AzureRmSqlServer): "Run Login-AzureRmAccount to login."
+Get-AzureRmSqlServer : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:49 char:1
++ Get-AzureRmSqlServer -ServerName $SQLServer -ResourceGroupName $Resou ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmSqlServer], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+Get-AzureRmSqlServer : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:49 char:1
++ Get-AzureRmSqlServer -ServerName $SQLServer -ResourceGroupName $Resou ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmSqlServer], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+
+Provisioning Azure SQL Server toyfactory
+PS C:\Code\Lesson06\Sharding> TerminatingError(New-AzureRmSqlServer): "Run Login-AzureRmAccount to login."
+New-AzureRmSqlServer : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:65 char:1
++ New-AzureRmSqlServer @_SqlServer;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmSqlServer], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Code\Lesson06\Sharding> .\shard-toystore.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is .\Log\Sharding.txt
+PS C:\Code\Lesson06\Sharding> TerminatingError(Set-AzureRmContext): "Cannot validate argument on parameter 'SubscriptionId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+Set-AzureRmContext : Cannot validate argument on parameter 'SubscriptionId'. The argument is null or empty. Provide an 
+argument that is not null or empty, and then try the command again.
+At C:\Code\Lesson06\Sharding\shard-toystore.ps1:49 char:36
++ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
++                                    ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureRmContext], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+Set-AzureRmContext : Cannot validate argument on parameter 'SubscriptionId'. The argument is null or empty. Provide an
+argument that is not null or empty, and then try the command again.
+At C:\Code\Lesson06\Sharding\shard-toystore.ps1:49 char:36
++ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
++                                    ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureRmContext], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Profile.SetAzureRMContextComma
+   nd
+
+PS C:\Code\Lesson06\Sharding> TerminatingError(Get-AzureRmResourceGroup): "Run Login-AzureRmAccount to login."
+Get-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:29 char:1
++ Get-AzureRmResourceGroup -Name $ResourceGroup -Location $Location -Er ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmResourceGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.GetAzureResourceGroupCommand
+Get-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:29 char:1
++ Get-AzureRmResourceGroup -Name $ResourceGroup -Location $Location -Er ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmResourceGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.GetAzureResourceGroupCommand
+
+Provisioning Azure Resource Group toystore
+PS C:\Code\Lesson06\Sharding> TerminatingError(New-AzureRmResourceGroup): "Run Login-AzureRmAccount to login."
+New-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:40 char:1
++ New-AzureRmResourceGroup @_ResourceGroup;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmResourceGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.NewAzureResourceGroupCommand
+New-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:40 char:1
++ New-AzureRmResourceGroup @_ResourceGroup;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmResourceGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.NewAzureResourceGroupCommand
+
+>> TerminatingError(Get-AzureRmSqlServer): "Run Login-AzureRmAccount to login."
+Get-AzureRmSqlServer : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:49 char:1
++ Get-AzureRmSqlServer -ServerName $SQLServer -ResourceGroupName $Resou ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmSqlServer], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+Get-AzureRmSqlServer : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:49 char:1
++ Get-AzureRmSqlServer -ServerName $SQLServer -ResourceGroupName $Resou ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmSqlServer], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+
+Provisioning Azure SQL Server toyfactory
+PS C:\Code\Lesson06\Sharding> TerminatingError(New-AzureRmSqlServer): "Run Login-AzureRmAccount to login."
+New-AzureRmSqlServer : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:65 char:1
++ New-AzureRmSqlServer @_SqlServer;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmSqlServer], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Server.Cmdlet.NewAzureSqlServer
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Code\Lesson06\Sharding> .\shard-toystore.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is .\Log\Sharding.txt
+PS C:\Code\Lesson06\Sharding> TerminatingError(Set-AzureRmContext): "Cannot validate argument on parameter 'SubscriptionId'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+Set-AzureRmContext : Cannot validate argument on parameter 'SubscriptionId'. The argument is null or empty. Provide an 
+argument that is not null or empty, and then try the command again.
+At C:\Code\Lesson06\Sharding\shard-toystore.ps1:49 char:36
++ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
++                                    ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureRmContext], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Profile.SetAzureRMContextCommand
+Set-AzureRmContext : Cannot validate argument on parameter 'SubscriptionId'. The argument is null or empty. Provide an
+argument that is not null or empty, and then try the command again.
+At C:\Code\Lesson06\Sharding\shard-toystore.ps1:49 char:36
++ Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
++                                    ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-AzureRmContext], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.Azure.Commands.Profile.SetAzureRMContextComma
+   nd
+
+PS C:\Code\Lesson06\Sharding> TerminatingError(Get-AzureRmResourceGroup): "Run Login-AzureRmAccount to login."
+Get-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:29 char:1
++ Get-AzureRmResourceGroup -Name $ResourceGroup -Location $Location -Er ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmResourceGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.GetAzureResourceGroupCommand
+Get-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:29 char:1
++ Get-AzureRmResourceGroup -Name $ResourceGroup -Location $Location -Er ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmResourceGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.GetAzureResourceGroupCommand
+
+Provisioning Azure Resource Group toystore
+PS C:\Code\Lesson06\Sharding> TerminatingError(New-AzureRmResourceGroup): "Run Login-AzureRmAccount to login."
+New-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:40 char:1
++ New-AzureRmResourceGroup @_ResourceGroup;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmResourceGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.NewAzureResourceGroupCommand
+New-AzureRmResourceGroup : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:40 char:1
++ New-AzureRmResourceGroup @_ResourceGroup;
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [New-AzureRmResourceGroup], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Resources.NewAzureResourceGroupCommand
+
+>> TerminatingError(Get-AzureRmSqlServer): "Run Login-AzureRmAccount to login."
+Get-AzureRmSqlServer : Run Login-AzureRmAccount to login.
+At C:\Code\Lesson01\ProvisionAzureSQLDatabase.ps1:49 char:1
++ Get-AzureRmSqlServer -ServerName $SQLServer -ResourceGroupName $Resou ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-AzureRmSqlServer], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.Azure.Commands.Sql.Server.Cmdlet.GetAzureSqlServer
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Code\Lesson06\Sharding> cd/
+cd/ : The term 'cd/' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ cd/
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (cd/:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+cd/ : The term 'cd/' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ cd/
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (cd/:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Code\Lesson06\Sharding> c;cd /
+c : The term 'c' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ c;cd /
++ ~
+    + CategoryInfo          : ObjectNotFound: (c:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+c : The term 'c' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ c;cd /
++ ~
+    + CategoryInfo          : ObjectNotFound: (c:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\> clear
+PS C:\> cd code
+PS C:\code> dir
+
+
+    Directory: C:\code
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       10/27/2017  11:22 PM                0_DatabaseBackup
+d-----       12/20/2017   9:26 AM                Lesson01
+d-----       10/28/2017   7:59 PM                Lesson02
+d-----        11/9/2017  11:38 PM                Lesson03
+d-----       11/15/2017   8:20 AM                Lesson04
+d-----       12/24/2017   4:07 PM                Lesson06
+-a----       12/24/2017  11:43 AM          25568 MyAzureProfile.json
+
+
+**********************
+Windows PowerShell transcript end
+End time: 20171224162608
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20171224162652
+Username: WIN2012R2\Administrator
+RunAs User: WIN2012R2\Administrator
+Machine: WIN2012R2 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe
+Process ID: 4864
+PSVersion: 5.0.10586.117
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0.10586.117
+BuildVersion: 10.0.10586.117
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\Log\Sharding.txt
+PS>if ($profile -is [System.Collections.IEnumerator]) 
+                    { 
+                        'System.Collections.IEnumerator'
+                    }
+                    else
+                    { 
+                        $profile 
+                    }
+                    
+PS>if ($AzureProfileFilePath -is [System.Collections.IEnumerator]) 
+                    { 
+                        'System.Collections.IEnumerator'
+                    }
+                    else
+                    { 
+                        $AzureProfileFilePath 
+                    }
+                    
+PS>TerminatingError(): "System error."
+PS C:\code\Lesson06\Sharding> TerminatingError(): "The pipeline has been stopped."
+>> .\shard-toystore.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is .\Log\Sharding.txt
+PS C:\code\Lesson06\Sharding> TerminatingError(): "System error."
+PS C:\code\Lesson06\Sharding> .\shard-toystore.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is .\Log\Sharding.txt
+PS C:\code\Lesson06\Sharding> if ($SubscriptionID -is [System.Collections.IEnumerator]) 
+                    { 
+                        'System.Collections.IEnumerator'
+                    }
+                    else
+                    { 
+                        $SubscriptionID 
+                    }
+                    
+PS C:\code\Lesson06\Sharding> TerminatingError(): "System error."
+PS C:\code\Lesson06\Sharding> .\shard-toystore.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is .\Log\Sharding.txt
+PS C:\code\Lesson06\Sharding> TerminatingError(): "System error."
+PS C:\code\Lesson06\Sharding> .\shard-toystore.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is .\Log\Shard-toystore.txt
+PS C:\code\Lesson06\Sharding> if ($AzureProfileFilePath -is [System.Collections.IEnumerator]) 
+                    { 
+                        'System.Collections.IEnumerator'
+                    }
+                    else
+                    { 
+                        $AzureProfileFilePath 
+                    }
+                    
+PS C:\code\Lesson06\Sharding> if ($AzureProfileFilePath -is [System.Collections.IEnumerator]) 
+                    { 
+                        'System.Collections.IEnumerator'
+                    }
+                    else
+                    { 
+                        $AzureProfileFilePath 
+                    }
+                    
+PS C:\code\Lesson06\Sharding> $AzureProfileFilePath
+PS C:\code\Lesson06\Sharding> text $AzureProfileFilePath
+PS C:\code\Lesson06\Sharding> TerminatingError(): "Object reference not set to an instance of an object."
+Login-AzureRmAccount : authentication_canceled: User canceled authentication
+At C:\code\Lesson06\Sharding\shard-toystore.ps1:45 char:16
++     $profile = Login-AzureRmAccount
++                ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Add-AzureRmAccount], AadAuthenticationCanceledException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.AddAzureRMAccountCommand
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\code\Lesson06\Sharding> text ..\..\MyAzureProfile.json
+text : The term 'text' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ text ..\..\MyAzureProfile.json
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (text:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+text : The term 'text' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included,
+verify that the path is correct and try again.
+At line:1 char:1
++ text ..\..\MyAzureProfile.json
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (text:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\code\Lesson06\Sharding> edit ..\..\MyAzureProfile.json
+edit : The term 'edit' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ edit ..\..\MyAzureProfile.json
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (edit:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+edit : The term 'edit' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included,
+verify that the path is correct and try again.
+At line:1 char:1
++ edit ..\..\MyAzureProfile.json
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (edit:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\code\Lesson06\Sharding> open
+open : The term 'open' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ open
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (open:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+open : The term 'open' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included,
+verify that the path is correct and try again.
+At line:1 char:1
++ open
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (open:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\code\Lesson06\Sharding> echo ..\..\MyAzureProfile.json
+..\..\MyAzureProfile.json
+PS C:\code\Lesson06\Sharding> ..\..\MyAzureProfile.json
+PS C:\code\Lesson06\Sharding> $AzureProfileFilePath="$ScriptPath\MyAzureProfile.json"
+PS C:\code\Lesson06\Sharding>  $AzureProfileFilePath="..\..\MyAzureProfile.json"
+PS C:\code\Lesson06\Sharding>  $profile = Select-AzureRmProfile -Path $AzureProfileFilePath
+PS C:\code\Lesson06\Sharding> $profile
+
+
+Environment           :
+Account               :
+TenantId              :
+SubscriptionId        :
+CurrentStorageAccount :
+
+
+
+PS C:\code\Lesson06\Sharding> $profile.Context.Subscription
+PS C:\code\Lesson06\Sharding> $profile.Context
+PS C:\code\Lesson06\Sharding> Save-AzureRmProfile -Profile (Login-AzureRmAccount) -Path C:\Code\MyAzureProfile.json
+PS C:\code\Lesson06\Sharding> .\shard-toystore.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is .\Log\Shard-toystore.txt
+PS C:\code\Lesson06\Sharding> if ($SubscriptionID -is [System.Collections.IEnumerator]) 
+                    { 
+                        'System.Collections.IEnumerator'
+                    }
+                    else
+                    { 
+                        $SubscriptionID 
+                    }
+                    
+PS C:\code\Lesson06\Sharding> if ($profile -is [System.Collections.IEnumerator]) 
+                    { 
+                        'System.Collections.IEnumerator'
+                    }
+                    else
+                    { 
+                        $profile 
+                    }
+                    
+PS C:\code\Lesson06\Sharding> if ($SubscriptionID -is [System.Collections.IEnumerator]) 
+                    { 
+                        'System.Collections.IEnumerator'
+                    }
+                    else
+                    { 
+                        $SubscriptionID 
+                    }
+                    
+PS C:\code\Lesson06\Sharding> if ($profile.Context.Subscription.SubscriptionId -is [System.Collections.IEnumerator]) 
+                    { 
+                        'System.Collections.IEnumerator'
+                    }
+                    else
+                    { 
+                        $profile.Context.Subscription.SubscriptionId 
+                    }
+                    
+PS C:\code\Lesson06\Sharding> if ($profile.Context.Subscription.SubscriptionId -is [System.Collections.IEnumerator]) 
+                    { 
+                        'System.Collections.IEnumerator'
+                    }
+                    else
+                    { 
+                        $profile.Context.Subscription.SubscriptionId 
+                    }
+                    
+PS C:\code\Lesson06\Sharding> TerminatingError(): "System error."
+PS C:\code\Lesson06\Sharding> .\shard-toystore.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+Transcript started, output file is .\Log\Shard-toystore.txt
+PS C:\code\Lesson06\Sharding> if ($profile -is [System.Collections.IEnumerator]) 
+                    { 
+                        'System.Collections.IEnumerator'
+                    }
+                    else
+                    { 
+                        $profile 
+                    }
+                    
+**********************
+Windows PowerShell transcript start
+Start time: 20171227085656
+Username: WIN2012R2\Administrator
+RunAs User: WIN2012R2\Administrator
+Machine: WIN2012R2 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Code\Lesson06\Sharding\toystore-Add-Shards.ps1
+Process ID: 928
+PSVersion: 5.0.10586.117
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0.10586.117
+BuildVersion: 10.0.10586.117
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\Log\Sharding.txt
+WARNING: The output object type of this cmdlet will be modified in a future release.
+
+
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_SMM
+Location                      : East US 2
+DatabaseId                    : 11a88b57-544e-43dc-a42b-03ecf191a9f6
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/23/2017 4:28:50 PM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/23/2017 5:00:13 PM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/Microsoft.Sql/servers/toyfactory/databases/toystore
+                                _SMM
+CreateMode                    :
+
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_Shard_100_150
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_Shard_100_150
+Location                      : East US 2
+DatabaseId                    : 375215d6-f0ef-4a68-a670-12b7af099cfb
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/27/2017 3:27:14 AM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/27/2017 3:58:24 AM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/Microsoft.Sql/servers/toyfactory/databases/toystore
+                                _Shard_100_150
+CreateMode                    :
+
+WARNING: The output object type of this cmdlet will be modified in a future release.
+ResourceGroupName : toystore
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore
+
+
+
+ResourceGroupName        : toystore
+ServerName               : toyfactory
+Location                 : East US 2
+SqlAdministratorLogin    : sqladmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+
+
+Provisioning Azure SQL Database toystore_Shard_150_200
+
+ResourceGroupName             : toystore
+ServerName                    : toyfactory
+DatabaseName                  : toystore_Shard_150_200
+Location                      : East US 2
+DatabaseId                    : f672ae97-4e6d-45d5-9326-dbf689b376f6
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 12/27/2017 3:28:37 AM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           : 12/27/2017 3:59:51 AM
+Tags                          :
+ResourceId                    : /subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/Microsoft.Sql/servers/toyfactory/databases/toystore
+                                _Shard_150_200
+CreateMode                    :
+
+Creating table 1_CreateSchemas.sql in toystore_Shard_150_200
+Creating table 2_Application.Countries.sql in toystore_Shard_150_200
+Creating table 3_Sales.Customer.sql in toystore_Shard_150_200
+Creating table 4_Sales.Orders.sql in toystore_Shard_150_200
+Adding toystore_Shard_100_150 and toystore_Shard_150_200 to the Shard Map toystorerangemap
+
+
+**********************
+Windows PowerShell transcript end
+End time: 20171227090529
+**********************

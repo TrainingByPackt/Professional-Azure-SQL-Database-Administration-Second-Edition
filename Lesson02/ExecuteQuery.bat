@@ -1,0 +1,2 @@
+rem Code is reviewed and is in working condition
+ostress -Stoyfactory.database.windows.net -Usqladmin -PPackt@pub2 -dtoystore -Q"SELECT * FROM Warehouse.StockItems si join Warehouse.StockItemholdings sh on si.StockItemId=sh.StockItemID join Sales.OrderLines ol on ol.StockItemID = si.StockItemID" -n25 -r20 -q

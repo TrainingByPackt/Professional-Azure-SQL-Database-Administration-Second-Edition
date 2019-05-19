@@ -1,0 +1,11 @@
+makecert ^
+ -n "CN=*.cloudapp.net" ^
+ -r -cy end -sky exchange -eku "1.3.6.1.5.5.7.3.1,1.3.6.1.5.5.7.3.2" ^
+ -a sha1 -len 2048 ^
+ -sr currentuser -ss root ^
+ -sv toyfactory.pvk toyfactory.cer
+ 
+ 
+ pvk2pfx -pvk toyfactory.pvk -spc toyfactory.cer -pfx toyfactory.pfx -pi Awesome@1234
+ 
+ B042D8608A996409757D43B4AE63EC92DB22F25C

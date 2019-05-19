@@ -1,0 +1,11 @@
+Change service tier to Premium
+
+PowerShell.exe "C:\Code\Lesson02\ScaleUpAzureSQLDB.ps1 -resourcegroupname toystore -azuresqlservername toyfactory -databasename toystore -newservicetier Premium -servicetierperfomancelevel P1 -AzureProfileFilePath C:\Code\MyAzureProfile.json"
+
+Disk Based Workload
+
+.\Start-Workload.ps1 -sqlserver toyfactory -database toystore -sqluser sqladmin -sqlpassword Packt@pub2 -ostresspath "C:\Program Files\Microsoft Corporation\RMLUtils\ostress.exe" -workloadtype disk
+
+In-Memory Workload
+
+.\Start-Workload.ps1 -sqlserver toyfactory -database toystore -sqluser sqladmin -sqlpassword Packt@pub2 -ostresspath "C:\Program Files\Microsoft Corporation\RMLUtils\ostress.exe" -workloadtype inmem

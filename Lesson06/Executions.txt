@@ -1,0 +1,18 @@
+.\Sharding.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore
+
+
+.\SplitToyStoreShard.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SplitMergeDatabase toystore_splitmerge -SplitMergeServiceEndpoint "https://splitmerge.cloudapp.net/" -ShardMapManagerDatabaseName toystore_SMM -Shard2 toystore_Shard_200 -ShardMapName toystorerangemap -SplitRangeLow 0 -SplitRangeHigh 200 -SplitValue 100
+
+
+
+.\shard-toystore.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore -AzureProfileFilePath C:\Code\MyAzureProfile.json
+
+
+.\toystore-Add-Shards.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -ShardMapManagerDatabase toystore_SMM -DatabaseToShard toystore -AzureProfileFilePath C:\Code\MyAzureProfile.json
+
+
+# split 50 records to the newly created toystore_Shard_50_100
+.\toystore_split_4shards.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SplitMergeDatabase toystore_splitmerge -SplitMergeServiceEndpoint "https://splitmerge.cloudapp.net/" -ShardMapManagerDatabaseName toystore_SMM -Shard2 toystore_Shard_50_100 -ShardMapName toystorerangemap -SplitRangeLow 1 -SplitRangeHigh 1000 -SplitValue 50
+
+# split 50 records to the newly created toystore_Shard_150_200
+.\toystore_split_4shards.ps1 -ResourceGroup toystore -SqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SplitMergeDatabase toystore_splitmerge -SplitMergeServiceEndpoint "https://splitmerge.cloudapp.net/" -ShardMapManagerDatabaseName toystore_SMM -Shard2 toystore_Shard_150_200 -ShardMapName toystorerangemap -SplitRangeLow 1 -SplitRangeHigh 1000 -SplitValue 150

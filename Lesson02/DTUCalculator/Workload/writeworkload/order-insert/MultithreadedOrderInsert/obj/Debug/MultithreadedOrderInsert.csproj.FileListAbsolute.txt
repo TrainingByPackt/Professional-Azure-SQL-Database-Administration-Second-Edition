@@ -1,0 +1,10 @@
+C:\Code\Lesson02\DTUCalculator\Workload\writeworkload\order-insert\MultithreadedOrderInsert\bin\Debug\MultithreadedOrderInsert.exe.config
+C:\Code\Lesson02\DTUCalculator\Workload\writeworkload\order-insert\MultithreadedOrderInsert\bin\Debug\MultithreadedOrderInsert.exe
+C:\Code\Lesson02\DTUCalculator\Workload\writeworkload\order-insert\MultithreadedOrderInsert\bin\Debug\MultithreadedOrderInsert.pdb
+C:\Code\Lesson02\DTUCalculator\Workload\writeworkload\order-insert\MultithreadedOrderInsert\obj\Debug\MultithreadedOrderInsert.csprojResolveAssemblyReference.cache
+C:\Code\Lesson02\DTUCalculator\Workload\writeworkload\order-insert\MultithreadedOrderInsert\obj\Debug\MultithreadedInMemoryTableInsert.ErrorDetailsForm.resources
+C:\Code\Lesson02\DTUCalculator\Workload\writeworkload\order-insert\MultithreadedOrderInsert\obj\Debug\MultithreadedInMemoryTableInsert.MultithreadedOrderInsertMain.resources
+C:\Code\Lesson02\DTUCalculator\Workload\writeworkload\order-insert\MultithreadedOrderInsert\obj\Debug\MultithreadedOrderInsert.Properties.Resources.resources
+C:\Code\Lesson02\DTUCalculator\Workload\writeworkload\order-insert\MultithreadedOrderInsert\obj\Debug\MultithreadedOrderInsert.csproj.GenerateResource.Cache
+C:\Code\Lesson02\DTUCalculator\Workload\writeworkload\order-insert\MultithreadedOrderInsert\obj\Debug\MultithreadedOrderInsert.exe
+C:\Code\Lesson02\DTUCalculator\Workload\writeworkload\order-insert\MultithreadedOrderInsert\obj\Debug\MultithreadedOrderInsert.pdb

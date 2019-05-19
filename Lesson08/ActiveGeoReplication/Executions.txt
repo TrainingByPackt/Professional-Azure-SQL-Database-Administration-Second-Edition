@@ -1,0 +1,5 @@
+# Replicate toystore_Shard_1_50 and toystore_Shard_50_100
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory-centralus -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore_Shard_1_50,toystore_Shard_50_100" -Operation "Add" -AzureProfileFilePath C:\Code\MyAzureProfile.json
+
+# failover to the secondary server
+.\Manage-ActiveGeoReplication.ps1 -ResourceGroup toystore -PrimarySqlServer toyfactory -UserName sqladmin -Password Packt@pub2 -SecondarySqlServer toyfactory-centralus -SecondaryServerLocation "Central US" -DatabasesToReplicate "toystore_Shard_1_50,toystore_Shard_50_100" -failover $true -AzureProfileFilePath C:\Code\MyAzureProfile.json
