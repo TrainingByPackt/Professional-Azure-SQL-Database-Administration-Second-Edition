@@ -78,16 +78,16 @@ workflow Set-AzureSqlDatabaseEdition
         $Servercredential = new-object System.Management.Automation.PSCredential($Using:Credential.UserName, (($Using:Credential).GetNetworkCredential().Password | ConvertTo-SecureString -asPlainText -Force)) 
         
         # Create connection context for Azure SQL Database server
-        $CTX = New-AzureSqlDatabaseServerContext -ManageUrl "https://$Using:SqlServerName.database.windows.net" -Credential $ServerCredential
+        $CTX = New-AzureSqlDatabaseServerContext -ManageUrl "https://$Using:SqlServerName.database.windows.net" -Credential $ServerCredential
         
         # Get Azure SQL Database context
-        $Db = Get-AzureSqlDatabase $CTX DatabaseName $Using:DatabaseName
+        $Db = Get-AzureSqlDatabase $CTX -DatabaseName $Using:DatabaseName
         
         # Specify the specific performance level for the target $DatabaseName
         $ServiceObjective = Get-AzureSqlDatabaseServiceObjective $CTX -ServiceObjectiveName "$Using:PerfLevel"
         
         # Set the new edition/performance level
-        Set-AzureSqlDatabase $CTX Database $Db ServiceObjective $ServiceObjective Edition $Using:Edition -Force
+        Set-AzureSqlDatabase $CTX -Database $Db -ServiceObjective $ServiceObjective -Edition $Using:Edition -Force
         
         # Output final status message
         Write-Output "Scaled the performance level of $Using:DatabaseName to $Using:Edition - $Using:PerfLevel"
