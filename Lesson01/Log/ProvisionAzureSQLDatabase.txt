@@ -488,3 +488,479 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 
 PS C:\Code-AZDB\Lesson01> cd /
+**********************
+Windows PowerShell transcript start
+Start time: 20190619004143
+Username: NEPTUNE\Administrator
+RunAs User: NEPTUNE\Administrator
+Machine: NEPTUNE (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 10444
+PSVersion: 5.1.14409.1005
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14409.1005
+BuildVersion: 10.0.14409.1005
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\log\ProvisionAzureSQLDatabase.txt
+
+
+ResourceGroupName : Packt
+Location          : eastus2
+ProvisioningState : Succeeded
+Tags              :
+ResourceId        : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/Packt
+
+
+Provisioning Azure SQL Server test1234343
+
+ResourceGroupName        : packt
+ServerName               : test1234343
+Location                 : eastus2
+SqlAdministratorLogin    : dbadmin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : test1234343.database.windows.net
+ResourceId               : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/packt/providers/Microsoft
+                           .Sql/servers/test1234343
+
+Provisioning Azure SQL Database testdb1323423
+
+ResourceGroupName             : packt
+ServerName                    : test1234343
+DatabaseName                  : testdb1323423
+Location                      : eastus2
+DatabaseId                    : 44a467f0-c819-4498-95af-b4b469d76dc9
+Edition                       : Basic
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 2147483648
+Status                        : Online
+CreationDate                  : 6/18/2019 7:13:54 PM
+CurrentServiceObjectiveId     : 00000000-0000-0000-0000-000000000000
+CurrentServiceObjectiveName   : Basic
+RequestedServiceObjectiveName : Basic
+RequestedServiceObjectiveId   :
+ElasticPoolName               :
+EarliestRestoreDate           : 6/18/2019 7:43:54 PM
+Tags                          :
+ResourceId                    : /subscriptions/b85b0984-a391-4f22-a832-fb6e46c39f38/resourceGroups/packt/providers/Micr
+                                osoft.Sql/servers/test1234343/databases/testdb1323423
+CreateMode                    :
+ReadScale                     : Disabled
+ZoneRedundant                 : False
+Capacity                      : 5
+Family                        :
+SkuName                       : Basic
+LicenseType                   :
+
+Creating firewall rule for  with StartIP: 14.194.236.193 and EndIP: 14.194.236.193
+
+ResourceGroupName : packt
+ServerName        : test1234343
+StartIpAddress    : 14.194.236.193
+EndIpAddress      : 14.194.236.193
+FirewallRuleName  : PacktPub_20190619000657
+
+
+
+PS E:\Professional-Azure-SQL-Database-Administration-Second-Edition\Lesson01> cd ..
+PS E:\Professional-Azure-SQL-Database-Administration-Second-Edition> clear
+PS E:\Professional-Azure-SQL-Database-Administration-Second-Edition> cd lesson09
+PS E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09> .\Start-Workload.ps1 -sqlserver packtdbserver -database toystore -sqluser sqladmin -sqlpassword Awesome@1234 -ostresspath "C:\Program Files\Microsoft Corporation\RMLUtils\ostress.exe" -workloadsql .\workload.sql 
+>> TerminatingError(Start-Workload.ps1): "A parameter cannot be found that matches parameter name 'ostresspath'."
+E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1 : A parameter cannot be 
+found that matches parameter name 'ostresspath'.
+At line:1 char:110
++ ... tore -sqluser sqladmin -sqlpassword Awesome@1234 -ostresspath "C:\Pro ...
++                                                      ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Start-Workload.ps1], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Start-Workload.ps1
+E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1 : A parameter cannot be
+found that matches parameter name 'ostresspath'.
+At line:1 char:110
++ ... tore -sqluser sqladmin -sqlpassword Awesome@1234 -ostresspath "C:\Pro ...
++                                                      ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Start-Workload.ps1], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Start-Workload.ps1
+
+PS E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09> .\Start-Workload.ps1 -sqlserver packtdbserver -database toystore -sqluser dbadmin -sqlpassword Awesome@1234 -workloadsql .\workload.sql
+Iteration 1:Executing queries in Workload.sql
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is 
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run 
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may 
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Sleeping for 5 seconds before next execution..
+Iteration 2:Executing queries in Workload.sql
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is 
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run 
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may 
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Sleeping for 5 seconds before next execution..
+Iteration 3:Executing queries in Workload.sql
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is 
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run 
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may 
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Sleeping for 5 seconds before next execution..
+Iteration 4:Executing queries in Workload.sql
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is 
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run 
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may 
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Sleeping for 5 seconds before next execution..
+Iteration 5:Executing queries in Workload.sql
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is 
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run 
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may 
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Sleeping for 5 seconds before next execution..
+Iteration 6:Executing queries in Workload.sql
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is 
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run 
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may 
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Sleeping for 5 seconds before next execution..
+Iteration 7:Executing queries in Workload.sql
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is 
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run 
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may 
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Sleeping for 5 seconds before next execution..
+Iteration 8:Executing queries in Workload.sql
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is 
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run 
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may 
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Sleeping for 5 seconds before next execution..
+Iteration 9:Executing queries in Workload.sql
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is 
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run 
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may 
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Sleeping for 5 seconds before next execution..
+Iteration 10:Executing queries in Workload.sql
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is 
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run 
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may 
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : Cannot open server 'packtdbserver' requested by the login. Client with IP address '14.194.236.193' is
+not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run
+sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may
+take up to five minutes for this change to take effect.
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExectionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At E:\Professional-Azure-SQL-Database-Administration-Second-Edition\lesson09\Start-Workload.ps1:26 char:1
++ Invoke-Sqlcmd -ServerInstance $sqlserver -Database $database -Usernam ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+Sleeping for 5 seconds before next execution..
+
+PS SQLSERVER:\> cd
+PS SQLSERVER:\> cd /
+PS SQLSERVER:\> cd..
+PS SQLSERVER:\> cd Text Box.\Start-Workload.ps1 -sqlserver toyfactory -database toystore -sqluser sqladmin -sqlpassword Packt@pub2-ostresspath "C:\Program Files\Microsoft Corporation\ RMLUtils\ostress.exe" -workloadsql .\workload.sql 
+>> TerminatingError(Set-Location): "A positional parameter cannot be found that accepts argument 'Box.\Start-Workload.ps1'."
+Set-Location : A positional parameter cannot be found that accepts argument 'Box.\Start-Workload.ps1'.
+At line:1 char:1
++ cd Text Box.\Start-Workload.ps1 -sqlserver toyfactory -database toyst ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Location], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+Set-Location : A positional parameter cannot be found that accepts argument 'Box.\Start-Workload.ps1'.
+At line:1 char:1
++ cd Text Box.\Start-Workload.ps1 -sqlserver toyfactory -database toyst ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Location], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+PS SQLSERVER:\> exit
+**********************
+Windows PowerShell transcript end
+End time: 20190619010229
+**********************
