@@ -43,7 +43,7 @@ if([string]::IsNullOrEmpty($AzureProfileFilePath))
 
 if((Test-Path -Path $AzureProfileFilePath))
 {
-    $profile = Select-AzureRmProfile -Path $AzureProfileFilePath
+    $profile = Import-AzureRmContext -Path $AzureProfileFilePath
     $SubscriptionID = $profile.Context.Subscription.SubscriptionId
 }
 else

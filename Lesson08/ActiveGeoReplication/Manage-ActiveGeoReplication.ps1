@@ -42,7 +42,9 @@ if([string]::IsNullOrEmpty($AzureProfileFilePath))
 
 if((Test-Path -Path $AzureProfileFilePath))
 {
-    $profile = Select-AzureRmProfile -Path $AzureProfileFilePath
+	#Select-AzureRmProfile is obselete
+	#$profile = Select-AzureRmProfile -Path $AzureProfileFilePath
+	$profile = Import-AzureRmContext -Path $AzureProfileFilePath
     $SubscriptionID = $profile.Context.Subscription.SubscriptionId
 }
 else
@@ -56,7 +58,6 @@ else
 
 #Set the Azure Context
 Set-AzureRmContext -SubscriptionId $SubscriptionID | Out-Null
-
 
 if($Operation -eq "Add")
 {
