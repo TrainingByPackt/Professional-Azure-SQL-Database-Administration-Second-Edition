@@ -187,12 +187,11 @@ Get-AzRouteTable `
 
 
 # Provision managed instance
- ConvertTo-SecureString 
- $creds = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $miadmin, (ConvertTo-SecureString -String $miadminpassword -AsPlainText -Force)
+  $creds = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $miadmin, (ConvertTo-SecureString -String $miadminpassword -AsPlainText -Force)
 
 New-AzSqlInstance -Name $miname -ResourceGroupName $ResourceGroup -Location $Location -SubnetId $misubnetid `
                       -AdministratorCredential $creds `
-                      -StorageSizeInGB $mistorage -VCore $mivcores -Edition $miedition
+                      -StorageSizeInGB $mistorage -VCore $mivcores -Edition $miedition `
                       -ComputeGeneration $migeneration -LicenseType $milicense
 
 
