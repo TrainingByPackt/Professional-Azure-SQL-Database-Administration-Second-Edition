@@ -38,7 +38,7 @@ if([string]::IsNullOrEmpty($newdatabasename))
 Write-Host "Restoring database $geodtabasename from geo backup" -ForegroundColor Green
 
 # perform the geo restore	 
-$restore = Restore-AzureRmSqlDatabase -FromGeoBackup -ResourceId $geodb.ResourceID -ServerName $sqlserver -TargetDatabaseName $newdatabasename -Edition $geodb.Edition -ResourceGroupName $resourcegroupname -ServiceObjectiveName $serviceobjectivename
+$restore = Restore-AzureRmSqlDatabase -FromGeoBackup -ResourceGroupName $resourcegroupname -ResourceId $geodb.ResourceID -ServerName $sqlserver -TargetDatabaseName $newdatabasename -Edition "Standard" -ServiceObjectiveName "S2"
 
 if($rerror -ne $null)
 {
