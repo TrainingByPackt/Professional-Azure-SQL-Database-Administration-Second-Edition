@@ -36,7 +36,7 @@ CREATE USER CustomerAdmin WITHOUT LOGIN
 -- Grant read access to Customers table to Mike, John and CustomerAdmin
 GRANT SELECT ON dbo.Customers TO Mike
 GO
-GRANT SELECT ON dbo.Customers TO [John@dataplatformlabs.com]
+GRANT SELECT ON dbo.Customers TO [john@aadityarama26gmail.onmicrosoft.com]
 GO
 GRANT SELECT ON dbo.Customers TO CustomerAdmin
 
@@ -73,17 +73,17 @@ EXECUTE AS USER='Mike'
 GO
 SELECT USER_NAME()
 GO
--- CustomerID 4 belongs to John
+-- CustomerID 11 belongs to John
 UPDATE dbo.Customers SET Email='MikeBlue@outlook.com' WHERE
-CustomerID=4
+CustomerID=11
 GO
 -- Switch User context to John
-EXECUTE AS USER='John@dataplatformlabs.com'
+EXECUTE AS USER='john@aadityarama26gmail.onmicrosoft.com'
 GO
 SELECT USER_NAME()
 GO
 -- Verify if email is updated or not
-SELECT * FROM dbo.Customers WHERE CustomerID=4
+SELECT * FROM dbo.Customers WHERE CustomerID=11
 
 -- What Mike can insert!!!
 
@@ -92,7 +92,7 @@ GO
 SELECT USER_NAME()
 GO
 INSERT INTO dbo.Customers 
-	VALUES('John@dataplatformlabs.com',9876543445345678,65412396852,'Mike@dataplatformlabs.com')
+	VALUES('john@aadityarama26gmail.onmicrosoft.com',9876543445345678,65412396852,'Mike@dataplatformlabs.com')
 
 -- What CustomerAdmin sees!!!
 REVERT;
