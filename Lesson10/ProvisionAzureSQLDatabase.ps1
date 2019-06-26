@@ -35,7 +35,7 @@ if([string]::IsNullOrEmpty($AzureProfileFilePath))
 if((Test-Path -Path $AzureProfileFilePath))
 {
 	#If Azure profile file is available get the profile information from the file
-    $profile = Select-AzureRmProfile -Path $AzureProfileFilePath
+    $profile = Import-AzureRmContext -Path $AzureProfileFilePath
 	#retrieve the subscription id from the profile.
     $SubscriptionID = $profile.Context.Subscription.SubscriptionId
 }
