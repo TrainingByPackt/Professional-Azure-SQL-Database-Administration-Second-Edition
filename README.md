@@ -33,5 +33,11 @@ For an optimal student experience, we recommend the following hardware configura
 
 ### Software requirements
 You’ll also need the following software installed in advance:
-* Operating System: Windows (8 or higher).
+* Operating System: Windows (8 or higher)
 * Google Chrome
+* An Azure subscription
+* SQL Server Management Studio 17.2 or above
+* PowerShell 5.1 or above
+* Microsoft RML Utilities
+* Visual Studio 2013 or above
+
