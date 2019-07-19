@@ -41,4 +41,4 @@ You’ll also need the following software installed in advance:
 * Microsoft RML Utilities
 * Visual Studio 2013 or above
 
-Note: Rename the parent folder "Professional-Azure-SQL-Database-Administration-Second-Edition" to something shorter so as to avoid issue when compiling the BruteForceAttack solution in Lesson 5.
+Note: Rename the parent folder "Professional-Azure-SQL-Database-Administration-Second-Edition" on your local system to something shorter so as to avoid issue when compiling the BruteForceAttack solution in Lesson 5.
